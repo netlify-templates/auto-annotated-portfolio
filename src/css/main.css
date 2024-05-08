@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply antialiased flex flex-col min-h-screen;
+    }
+    body > div,
+    .sb-page,
+    .sb-base {
+        @apply flex flex-col grow;
+    }
+    .sb-layout {
+        @apply grow;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply break-words;
+        line-height: 1.15;
+    }
+}
+
+@layer components {
+    .sb-markdown {
+        @apply text-lg leading-relaxed;
+        a {
+            @apply underline;
+        }
+        a:hover {
+            @apply no-underline;
+        }
+        b,
+        strong {
+            @apply font-medium;
+        }
+        em {
+            @apply italic;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 2.5rem 0 1.5rem;
+        }
+        p {
+            margin: 1.5rem 0;
+        }
+        ol {
+            @apply list-decimal;
+            margin: 1.5rem 0;
+            padding-left: 1.25em;
+        }
+        ul {
+            @apply list-disc;
+            margin: 1.5rem 0;
+            padding-left: 1.25em;
+        }
+        li > ul,
+        li > ol {
+            margin: 0;
+        }
+        blockquote {
+            @apply border-l-4 border-current;
+            font-size: 1.25em;
+            line-height: 1.4;
+            margin: 2.5rem 0;
+            padding-left: 1.25em;
+        }
+        pre {
+            @apply border border-current overflow-x-auto leading-normal;
+            font-size: 0.875em;
+            margin: 1.5rem 0;
+            padding: 1.25em;
+        }
+        hr {
+            @apply bg-current border-0 h-px;
+            margin: 2.5rem 0;
+        }
+        figure {
+            margin: 1.5rem 0;
+        }
+        figcaption {
+            @apply leading-normal;
+            font-size: 0.875em;
+            margin: 0.5rem 0 0;
+        }
+        table {
+            @apply border border-current border-collapse text-left w-full;
+            margin: 1.5rem 0;
+        }
+        caption {
+            @apply text-left;
+            font-size: 0.875em;
+            margin: 0 0 0.5rem;
+        }
+        th,
+        td {
+            @apply border-r border-b border-current;
+            padding: 0.5em;
+        }
+        th {
+            font-weight: medium;
+        }
+        h1:first-child,
+        h2:first-child,
+        h3:first-child,
+        h4:first-child,
+        h5:first-child,
+        h6:first-child,
+        p:first-child,
+        ul:first-child,
+        ol:first-child,
+        blockquote:first-child,
+        pre:first-child,
+        hr:first-child,
+        figure:first-child,
+        table:first-child {
+            margin-top: 0;
+        }
+        h1 + h2,
+        h2 + h3,
+        h3 + h4,
+        h4 + h5,
+        h5 + h6 {
+            margin-top: 1.5rem;
+        }
+    }
+
+    /* Buttons */
+    .sb-component-button {
+        @apply text-lg border-2 border-current inline-flex items-center justify-center no-underline relative text-center transition duration-200 ease-in;
+        box-shadow: none;
+    }
+    .sb-component-button:not(.sb-component-button-no-hover):hover,
+    .group:hover .sb-component-button:not(.sb-component-button-no-hover) {
+        box-shadow: 0 6px 0 0 currentColor;
+        transform: translate(0, -6px);
+    }
+    .sb-component-button-secondary {
+        @apply rounded-full;
+    }
+
+    /* Links */
+    .sb-component-link {
+        @apply text-lg inline-flex items-center justify-center no-underline relative;
+    }
+    .sb-component-link:not(.sb-component-link-fill) {
+        box-shadow: 0 1px 0 0 currentColor;
+        transition: box-shadow 0.25s ease-in-out;
+    }
+    .sb-component-link:not(.sb-component-link-fill):hover,
+    .group:hover .sb-component-link:not(.sb-component-link-fill) {
+        box-shadow: 0 5px 0 0 currentColor;
+    }
+
+    /* Socials */
+    .sb-component-social {
+        @apply text-lg inline-flex items-center justify-center no-underline relative;
+    }
+    .sb-component-social:not(.sb-component-social-fill) {
+        @apply opacity-100 hover:opacity-80;
+        transition: opacity 0.25s ease-in-out;
+    }
+
+    /* Header links hover */
+    .sb-component-link-fill,
+    .sb-component-social-fill,
+    .sb-header-logo {
+        @apply relative overflow-hidden;
+        transition: color 0.25s ease-in-out;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        z-index: 1;
+    }
+    .sb-component-link-fill:before,
+    .sb-component-social-fill:before,
+    .sb-header-logo:before {
+        @apply absolute h-full left-0 top-0 opacity-0;
+        content: '';
+        z-index: -1;
+        transform: translate3d(0, -100%, 0);
+        transform-origin: 0% 100%;
+        transition: transform 0.25s, opacity 0.25s;
+        width: 101%;
+    }
+    .sb-component-link-fill:hover:before,
+    .sb-component-social-fill:hover:before,
+    .sb-header-logo:hover:before {
+        @apply opacity-100;
+        transform: translate3d(0, 0, 0);
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    /* Form controls */
+    .sb-form-control {
+        @apply mb-6;
+    }
+    .sb-label {
+        @apply inline-block mb-1 sm:text-xl;
+    }
+    .sb-input,
+    .sb-select,
+    .sb-textarea {
+        @apply bg-transparent border border-current p-3 w-full focus:outline-none sm:text-xl;
+    }
+    option {
+        color: initial;
+    }
+    .sb-checkbox {
+        @apply appearance-none absolute select-none opacity-0;
+        height: 1.5em;
+        width: 1.5em;
+    }
+    .sb-checkbox + .sb-label {
+        @apply cursor-pointer relative sm:text-xl;
+        padding-left: 2.5em;
+    }
+    .sb-checkbox + .sb-label:before {
+        @apply absolute left-0 top-1/2 -translate-y-1/2 border border-current cursor-pointer text-center font-sans;
+        content: '';
+        height: 1.5em;
+        width: 1.5em;
+        line-height: 1.25;
+    }
+    .sb-checkbox:checked + .sb-label:before {
+        content: '\2713';
+    }
+    .sb-select {
+        @apply appearance-none bg-no-repeat cursor-pointer pr-7;
+        background-image: linear-gradient(45deg, transparent 50%, currentColor 0), linear-gradient(135deg, currentColor 50%, transparent 0);
+        background-position: calc(100% - 18px) calc(1px + 50%), calc(100% - 12px) calc(1px + 50%);
+        background-size: 6px 6px, 6px 6px;
+        background-repeat: no-repeat;
+    }
+
+    .text-center + .sb-contact-section-form,
+    .sb-contact-section-form:only-child {
+        text-align: center;
+    }
+
+    /* Post, project "read more" button */
+    .sb-project-feed-item.group:hover .sb-component-button-icon,
+    .sb-post-feed-item.group:hover .sb-component-button-icon {
+        transform: translate(6px, -6px);
+    }
+
+    /* Project navigation */
+    .sb-project-nav-item:not(:first-child) {
+        @apply md:text-right;
+    }
+
+    /* Color palettes */
+    .colors-a {
+        @apply bg-dark text-on-dark;
+        .sb-input,
+        .sb-select,
+        .sb-textarea {
+            @apply text-on-dark placeholder-on-dark placeholder-opacity-75;
+        }
+        .sb-component-link-fill:before,
+        .sb-component-social-fill:before,
+        .sb-header-logo:before {
+            @apply bg-on-dark;
+        }
+        .sb-component-link-fill:hover,
+        .sb-component-social-fill:hover,
+        .sb-header-logo:hover {
+            @apply text-dark;
+        }
+        .sb-header-overlay {
+            @apply bg-dark;
+        }
+    }
+    .colors-b {
+        @apply bg-light text-on-light;
+        .sb-input,
+        .sb-select,
+        .sb-textarea {
+            @apply text-on-light placeholder-on-light placeholder-opacity-75;
+        }
+        .sb-component-link-fill:before,
+        .sb-component-social-fill:before,
+        .sb-header-logo:before {
+            @apply bg-on-light;
+        }
+        .sb-component-link-fill:hover,
+        .sb-component-social-fill:hover,
+        .sb-header-logo:hover {
+            @apply text-light;
+        }
+        .sb-header-overlay {
+            @apply bg-light;
+        }
+    }
+    .colors-c {
+        @apply bg-primary text-on-primary;
+        .sb-input,
+        .sb-select,
+        .sb-textarea {
+            @apply text-on-primary placeholder-on-primary placeholder-opacity-75;
+        }
+        .sb-component-link-fill:before,
+        .sb-component-social-fill:before,
+        .sb-header-logo:before {
+            @apply bg-on-primary;
+        }
+        .sb-component-link-fill:hover,
+        .sb-component-social-fill:hover,
+        .sb-header-logo:hover {
+            @apply text-primary;
+        }
+        .sb-header-overlay {
+            @apply bg-primary;
+        }
+    }
+    .colors-d {
+        @apply bg-secondary text-on-secondary;
+        .sb-input,
+        .sb-select,
+        .sb-textarea {
+            @apply text-on-secondary placeholder-on-secondary placeholder-opacity-75;
+        }
+        .sb-component-link-fill:before,
+        .sb-component-social-fill:before,
+        .sb-header-logo:before {
+            @apply bg-on-secondary;
+        }
+        .sb-component-link-fill:hover,
+        .sb-component-social-fill:hover,
+        .sb-header-logo:hover {
+            @apply text-secondary;
+        }
+        .sb-header-overlay {
+            @apply bg-secondary;
+        }
+    }
+    .colors-e {
+        @apply bg-complementary text-on-complementary;
+        .sb-input,
+        .sb-select,
+        .sb-textarea {
+            @apply text-on-complementary placeholder-on-complementary placeholder-opacity-75;
+        }
+        .sb-component-link-fill:before,
+        .sb-component-social-fill:before,
+        .sb-header-logo:before {
+            @apply bg-on-complementary;
+        }
+        .sb-component-link-fill:hover,
+        .sb-component-social-fill:hover,
+        .sb-header-logo:hover {
+            @apply text-complementary;
+        }
+        .sb-header-overlay {
+            @apply bg-complementary;
+        }
+    }
+    .colors-f {
+        @apply bg-transparent;
+    }
+}

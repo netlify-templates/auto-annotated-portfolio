@@ -1,0 +1,129 @@
+{
+    "model": "CtaSection",
+    "presets": [
+        {
+            "label": "CTA transparent - button bottom",
+            "thumbnail": "images/cta-transparent-btn-bottom.png",
+            "data": {
+                "colors": "colors-f",
+                "actions": [
+                    {
+                        "label": "Try it now",
+                        "altText": "",
+                        "url": "/",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "iconPosition": "right",
+                        "style": "primary",
+                        "type": "Button"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "col"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "flex-start"
+                    }
+                }
+            }
+        },
+        {
+            "label": "CTA primary - button bottom",
+            "thumbnail": "images/cta-primary-btn-bottom.png",
+            "data": {
+                "colors": "colors-c",
+                "actions": [
+                    {
+                        "label": "Try it now",
+                        "altText": "",
+                        "url": "/",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "iconPosition": "right",
+                        "style": "primary",
+                        "type": "Button"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "col"
+                    },
+                    "title": {
+                        "textAlign": "center"
+                    },
+                    "text": {
+                        "textAlign": "center"
+                    },
+                    "actions": {
+                        "justifyContent": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "CTA transparent - button right",
+            "thumbnail": "images/cta-transparent-btn-right.png",
+            "data": {
+                "colors": "colors-f",
+                "actions": [
+                    {
+                        "label": "Try it now",
+                        "altText": "",
+                        "url": "/",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "iconPosition": "right",
+                        "style": "primary",
+                        "type": "Button"
+                    },
+                    {
+                        "label": "Learn more",
+                        "altText": "",
+                        "url": "/",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "iconPosition": "right",
+                        "style": "primary",
+                        "type": "Link"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "row"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "flex-start"
+                    }
+                }
+            }
+        }
+    ]
+}

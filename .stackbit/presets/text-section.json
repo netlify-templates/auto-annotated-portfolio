@@ -1,0 +1,84 @@
+{
+    "model": "TextSection",
+    "presets": [
+        {
+            "label": "Text transparent left",
+            "thumbnail": "images/text-transparent-left.png",
+            "data": {
+                "colors": "colors-f",
+                "title": "The Section Title",
+                "subtitle": null,
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Text transparent center",
+            "thumbnail": "images/text-transparent-center.png",
+            "data": {
+                "colors": "colors-f",
+                "title": "The Section Title",
+                "subtitle": "The section subtitle",
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "center"
+                    },
+                    "subtitle": {
+                        "textAlign": "center"
+                    },
+                    "text": {
+                        "textAlign": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Text secondary left",
+            "thumbnail": "images/text-secondary-left.png",
+            "data": {
+                "colors": "colors-d",
+                "variant": "variant-b",
+                "title": "The Section Title",
+                "subtitle": "The section subtitle",
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        }
+    ]
+}

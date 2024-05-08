@@ -1,0 +1,83 @@
+{
+    "model": "QuoteSection",
+    "presets": [
+        {
+            "label": "Quote transparent, text left",
+            "thumbnail": "images/quote-transparent-left.png",
+            "data": {
+                "colors": "colors-f",
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-36", "pb-36", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "quote": {
+                        "textAlign": "left"
+                    },
+                    "name": {
+                        "fontWeight\"": 500,
+                        "textAlign": "left"
+                    },
+                    "title": {
+                        "fontWeight\"": 400,
+                        "textAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Quote transparent, text centered",
+            "thumbnail": "images/quote-transparent-centered.png",
+            "data": {
+                "colors": "colors-f",
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-36", "pb-36", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "quote": {
+                        "textAlign": "center"
+                    },
+                    "name": {
+                        "fontWeight\"": 500,
+                        "textAlign": "center"
+                    },
+                    "title": {
+                        "fontWeight\"": 400,
+                        "textAlign": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Quote secondary, text left",
+            "thumbnail": "images/quote-secondary-left.png",
+            "data": {
+                "colors": "colors-d",
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-36", "pb-36", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "quote": {
+                        "textAlign": "left"
+                    },
+                    "name": {
+                        "fontWeight\"": 500,
+                        "textAlign": "left"
+                    },
+                    "title": {
+                        "fontWeight\"": 400,
+                        "textAlign": "left"
+                    }
+                }
+            }
+        }
+    ]
+}

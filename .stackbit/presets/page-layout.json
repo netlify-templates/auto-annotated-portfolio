@@ -1,0 +1,644 @@
+{
+    "model": "PageLayout",
+    "presets": [
+        {
+            "label": "Empty page",
+            "thumbnail": "images/page-empty.png",
+            "data": {
+                "title": "Empty page",
+                "colors": "colors-a",
+                "backgroundImage": {
+                    "url": "/images/bg2.jpg",
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "center",
+                    "backgroundRepeat": "no-repeat",
+                    "opacity": 80
+                },
+                "sections": [
+                    {
+                        "type": "TextSection",
+                        "colors": "colors-f",
+                        "variant": "variant-a",
+                        "title": "This in an empty page",
+                        "text": "Start adding sections by clicking the + button on the page or through the sidebar.",
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "narrow",
+                                "padding": ["pt-12", "pb-36", "pl-4", "pr-4"],
+                                "justifyContent": "center"
+                            },
+                            "title": {
+                                "textAlign": "left"
+                            },
+                            "subtitle": {
+                                "textAlign": "left"
+                            },
+                            "text": {
+                                "textAlign": "left"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "label": "Landing",
+            "thumbnail": "images/page-landing.png",
+            "data": {
+                "title": "Landing",
+                "colors": "colors-a",
+                "backgroundImage": {
+                    "url": "/images/bg1.jpg",
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "center",
+                    "backgroundRepeat": "no-repeat",
+                    "opacity": 80
+                },
+                "sections": [
+                    {
+                        "type": "HeroSection",
+                        "colors": "colors-f",
+                        "title": "I'm a developer, digital artist, consultant and a bunch of other impressive titles and buzz words.",
+                        "subtitle": "This is my info — I'm sharing it all this with ya'll to impress you with all the hard work I've done in the past few years. Once you're impressed, you can continue to scroll down to see more details and credentials about me.",
+                        "actions": [],
+                        "media": null,
+                        "backgroundSize": "full",
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "wide",
+                                "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "flexDirection": "row"
+                            },
+                            "title": {
+                                "textAlign": "left"
+                            },
+                            "subtitle": {
+                                "textAlign": "left"
+                            },
+                            "text": {
+                                "textAlign": "left"
+                            },
+                            "actions": {
+                                "justifyContent": "flex-start"
+                            }
+                        }
+                    },
+                    {
+                        "type": "FeaturedProjectsSection",
+                        "colors": "colors-f",
+                        "variant": "variant-b",
+                        "title": "",
+                        "subtitle": "Recent projects",
+                        "actions": [
+                            {
+                                "type": "Link",
+                                "label": "See all projects",
+                                "url": "/projects"
+                            }
+                        ],
+                        "showDate": false,
+                        "showDescription": true,
+                        "showFeaturedImage": true,
+                        "showReadMoreLink": true,
+                        "projects": [
+                            "content/pages/projects/project-two.md",
+                            "content/pages/projects/project-three.md",
+                            "content/pages/projects/project-one.md"
+                        ],
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "wide",
+                                "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                                "justifyContent": "center"
+                            },
+                            "title": {
+                                "textAlign": "left"
+                            },
+                            "subtitle": {
+                                "textAlign": "left"
+                            },
+                            "actions": {
+                                "justifyContent": "flex-end"
+                            }
+                        }
+                    },
+                    {
+                        "type": "RecentPostsSection",
+                        "colors": "colors-f",
+                        "variant": "variant-d",
+                        "title": "",
+                        "subtitle": "Recent posts",
+                        "actions": [
+                            {
+                                "type": "Link",
+                                "label": "See all posts",
+                                "url": "/blog",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "iconPosition": "right"
+                            }
+                        ],
+                        "showDate": true,
+                        "showAuthor": false,
+                        "showExcerpt": true,
+                        "showReadMoreLink": true,
+                        "recentCount": 3,
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "narrow",
+                                "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                                "justifyContent": "center"
+                            },
+                            "title": {
+                                "textAlign": "left"
+                            },
+                            "subtitle": {
+                                "textAlign": "left"
+                            },
+                            "actions": {
+                                "justifyContent": "flex-end"
+                            }
+                        }
+                    },
+                    {
+                        "type": "ContactSection",
+                        "colors": "colors-f",
+                        "title": "Got an interesting project? Tell me more...",
+                        "text": "",
+                        "backgroundSize": "full",
+                        "media": null,
+                        "form": {
+                            "type": "FormBlock",
+                            "elementId": "sign-up-form",
+                            "action": "/.netlify/functions/submission_created",
+                            "destination": "",
+                            "fields": [
+                                {
+                                    "type": "TextFormControl",
+                                    "name": "firstName",
+                                    "label": "First Name",
+                                    "hideLabel": true,
+                                    "placeholder": "First Name",
+                                    "isRequired": false,
+                                    "width": "1/2"
+                                },
+                                {
+                                    "type": "TextFormControl",
+                                    "name": "lastName",
+                                    "label": "Last Name",
+                                    "hideLabel": true,
+                                    "placeholder": "Last Name",
+                                    "isRequired": false,
+                                    "width": "1/2"
+                                },
+                                {
+                                    "type": "EmailFormControl",
+                                    "name": "email",
+                                    "label": "Email",
+                                    "hideLabel": true,
+                                    "placeholder": "Email",
+                                    "isRequired": true,
+                                    "width": "full"
+                                },
+                                {
+                                    "type": "TextareaFormControl",
+                                    "name": "message",
+                                    "label": "Tell me about your project",
+                                    "hideLabel": true,
+                                    "placeholder": "Tell me about your project",
+                                    "isRequired": true,
+                                    "width": "full"
+                                }
+                            ],
+                            "submitLabel": "Submit 🚀",
+                            "styles": {
+                                "submitLabel": {
+                                    "textAlign": "center"
+                                }
+                            }
+                        },
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "narrow",
+                                "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "flexDirection": "row"
+                            },
+                            "title": {
+                                "textAlign": "left"
+                            },
+                            "text": {
+                                "textAlign": "left"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "label": "Info page",
+            "thumbnail": "images/page-info.png",
+            "data": {
+                "title": "Info page",
+                "colors": "colors-a",
+                "backgroundImage": {
+                    "url": "/images/bg2.jpg",
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "center",
+                    "backgroundRepeat": "no-repeat",
+                    "opacity": 80
+                },
+                "sections": [
+                    {
+                        "type": "HeroSection",
+                        "colors": "colors-f",
+                        "title": "I'm a developer, digital artist, consultant and a bunch of other impressive titles and buzz words.",
+                        "subtitle": "This is my info — I'm sharing it all this with ya'll to impress you with all the hard work I've done in the past few years. Once you're impressed, you can continue to scroll down to see more details and credentials about me.",
+                        "actions": [],
+                        "media": {
+                            "type": "ImageBlock",
+                            "url": "/images/about.jpg",
+                            "altText": "Hero image"
+                        },
+                        "backgroundSize": "full",
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "wide",
+                                "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "flexDirection": "row"
+                            },
+                            "title": {
+                                "textAlign": "left"
+                            },
+                            "subtitle": {
+                                "textAlign": "left"
+                            },
+                            "text": {
+                                "textAlign": "left"
+                            },
+                            "actions": {
+                                "justifyContent": "flex-start"
+                            }
+                        }
+                    },
+                    {
+                        "type": "DividerSection",
+                        "styles": {
+                            "self": {
+                                "width": "wide",
+                                "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
+                                "justifyContent": "center",
+                                "borderWidth": 1
+                            }
+                        }
+                    },
+                    {
+                        "type": "MediaGallerySection",
+                        "colors": "colors-f",
+                        "title": "",
+                        "subtitle": "I worked with these folks:",
+                        "images": [
+                            {
+                                "type": "ImageBlock",
+                                "url": "/images/logo1.svg",
+                                "altText": "logo one"
+                            },
+                            {
+                                "type": "ImageBlock",
+                                "url": "/images/logo2.svg",
+                                "altText": "logo two"
+                            },
+                            {
+                                "type": "ImageBlock",
+                                "url": "/images/logo3.svg",
+                                "altText": "logo three"
+                            },
+                            {
+                                "type": "ImageBlock",
+                                "url": "/images/logo4.svg",
+                                "altText": "logo four"
+                            },
+                            {
+                                "type": "ImageBlock",
+                                "url": "/images/logo5.svg",
+                                "altText": "logo five"
+                            }
+                        ],
+                        "columns": 5,
+                        "spacing": 16,
+                        "aspectRatio": "16:9",
+                        "showCaption": true,
+                        "enableHover": false,
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "wide",
+                                "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                                "justifyContent": "center"
+                            },
+                            "title": {
+                                "textAlign": "center"
+                            },
+                            "subtitle": {
+                                "textAlign": "center"
+                            }
+                        }
+                    },
+                    {
+                        "type": "DividerSection",
+                        "styles": {
+                            "self": {
+                                "width": "wide",
+                                "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
+                                "justifyContent": "center",
+                                "borderWidth": 1
+                            }
+                        }
+                    },
+                    {
+                        "type": "LabelsSection",
+                        "colors": "colors-f",
+                        "subtitle": "Skills:",
+                        "items": [
+                            {
+                                "type": "Label",
+                                "label": "WEB 1, 2, 3"
+                            },
+                            {
+                                "type": "Label",
+                                "label": "React"
+                            },
+                            {
+                                "type": "Label",
+                                "label": "Microsoft Office"
+                            },
+                            {
+                                "type": "Label",
+                                "label": "Next.js"
+                            },
+                            {
+                                "type": "Label",
+                                "label": "Netlify"
+                            },
+                            {
+                                "type": "Label",
+                                "label": "Pancakes"
+                            },
+                            {
+                                "type": "Label",
+                                "label": "C++"
+                            },
+                            {
+                                "type": "Label",
+                                "label": "Swift"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "DividerSection",
+                        "styles": {
+                            "self": {
+                                "width": "wide",
+                                "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
+                                "justifyContent": "center",
+                                "borderWidth": 1
+                            }
+                        }
+                    },
+                    {
+                        "type": "FeaturedItemsSection",
+                        "colors": "colors-f",
+                        "title": "",
+                        "subtitle": "You can find me here:",
+                        "actions": [],
+                        "items": [
+                            {
+                                "type": "FeaturedItem",
+                                "title": "",
+                                "text": "",
+                                "actions": [
+                                    {
+                                        "type": "Link",
+                                        "label": "GitHub",
+                                        "showIcon": false,
+                                        "url": "https://github.com/"
+                                    }
+                                ],
+                                "styles": {
+                                    "self": {
+                                        "textAlign": "left"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "FeaturedItem",
+                                "title": "",
+                                "text": "",
+                                "actions": [
+                                    {
+                                        "type": "Link",
+                                        "label": "Twitter",
+                                        "showIcon": false,
+                                        "url": "https://twitter.com/"
+                                    }
+                                ],
+                                "styles": {
+                                    "self": {
+                                        "textAlign": "left"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "FeaturedItem",
+                                "title": "",
+                                "text": "",
+                                "actions": [
+                                    {
+                                        "type": "Link",
+                                        "label": "LinkedIn",
+                                        "showIcon": false,
+                                        "url": "https://www.linkedin.com/"
+                                    }
+                                ],
+                                "styles": {
+                                    "self": {
+                                        "textAlign": "left"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "FeaturedItem",
+                                "title": "",
+                                "text": "",
+                                "actions": [
+                                    {
+                                        "type": "Link",
+                                        "label": "CodePen",
+                                        "showIcon": false,
+                                        "url": "https://codepen.io/"
+                                    }
+                                ],
+                                "styles": {
+                                    "self": {
+                                        "textAlign": "left"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "FeaturedItem",
+                                "title": "",
+                                "text": "",
+                                "actions": [
+                                    {
+                                        "type": "Link",
+                                        "label": "Discord",
+                                        "showIcon": false,
+                                        "url": "https://discord.com/"
+                                    }
+                                ],
+                                "styles": {
+                                    "self": {
+                                        "textAlign": "left"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "FeaturedItem",
+                                "title": "",
+                                "text": "",
+                                "actions": [
+                                    {
+                                        "type": "Link",
+                                        "label": "Instagram",
+                                        "showIcon": false,
+                                        "url": "https://www.instagram.com/"
+                                    }
+                                ],
+                                "styles": {
+                                    "self": {
+                                        "textAlign": "left"
+                                    }
+                                }
+                            }
+                        ],
+                        "columns": 3,
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "wide",
+                                "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
+                                "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
+                                "justifyContent": "center"
+                            },
+                            "title": {
+                                "textAlign": "center"
+                            },
+                            "subtitle": {
+                                "textAlign": "center"
+                            },
+                            "actions": {
+                                "justifyContent": "flex-start"
+                            }
+                        }
+                    },
+                    {
+                        "type": "DividerSection",
+                        "styles": {
+                            "self": {
+                                "width": "wide",
+                                "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
+                                "justifyContent": "center",
+                                "borderWidth": 1
+                            }
+                        }
+                    },
+                    {
+                        "type": "ContactSection",
+                        "colors": "colors-f",
+                        "title": "Got an interesting project? Tell me more...",
+                        "text": "",
+                        "backgroundSize": "full",
+                        "media": null,
+                        "form": {
+                            "type": "FormBlock",
+                            "elementId": "sign-up-form",
+                            "action": "/.netlify/functions/submission_created",
+                            "destination": "",
+                            "fields": [
+                                {
+                                    "type": "TextFormControl",
+                                    "name": "firstName",
+                                    "label": "First Name",
+                                    "hideLabel": true,
+                                    "placeholder": "First Name",
+                                    "isRequired": false,
+                                    "width": "1/2"
+                                },
+                                {
+                                    "type": "TextFormControl",
+                                    "name": "lastName",
+                                    "label": "Last Name",
+                                    "hideLabel": true,
+                                    "placeholder": "Last Name",
+                                    "isRequired": false,
+                                    "width": "1/2"
+                                },
+                                {
+                                    "type": "EmailFormControl",
+                                    "name": "email",
+                                    "label": "Email",
+                                    "hideLabel": true,
+                                    "placeholder": "Email",
+                                    "isRequired": true,
+                                    "width": "full"
+                                },
+                                {
+                                    "type": "TextareaFormControl",
+                                    "name": "message",
+                                    "label": "Tell me about your project",
+                                    "hideLabel": true,
+                                    "placeholder": "Tell me about your project",
+                                    "isRequired": true,
+                                    "width": "full"
+                                }
+                            ],
+                            "submitLabel": "Submit 🚀",
+                            "styles": {
+                                "submitLabel": {
+                                    "textAlign": "center"
+                                }
+                            }
+                        },
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "narrow",
+                                "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "flexDirection": "row"
+                            },
+                            "title": {
+                                "textAlign": "left"
+                            },
+                            "text": {
+                                "textAlign": "left"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

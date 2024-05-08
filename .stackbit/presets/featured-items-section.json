@@ -1,0 +1,185 @@
+{
+    "model": "FeaturedItemsSection",
+    "presets": [
+        {
+            "label": "Featured items transparent - 1 column",
+            "thumbnail": "images/feat-items-transparent-1-col.png",
+            "data": {
+                "colors": "colors-f",
+                "title": "Value propositions",
+                "subtitle": null,
+                "actions": [],
+                "columns": 1,
+                "items": [
+                    {
+                        "type": "FeaturedItem",
+                        "title": "I'm Fast",
+                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "url": "/",
+                                "style": "primary"
+                            }
+                        ],
+                        "styles": {
+                            "self": {
+                                "textAlign": "left"
+                            }
+                        }
+                    },
+                    {
+                        "type": "FeaturedItem",
+                        "title": "I'm Smart",
+                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "url": "/",
+                                "style": "primary"
+                            }
+                        ],
+                        "styles": {
+                            "self": {
+                                "textAlign": "left"
+                            }
+                        }
+                    },
+                    {
+                        "type": "FeaturedItem",
+                        "title": "I'm Focused",
+                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "url": "/",
+                                "style": "primary"
+                            }
+                        ],
+                        "styles": {
+                            "self": {
+                                "textAlign": "left"
+                            }
+                        }
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "flex-start"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Featured items secondary - 2 columns",
+            "thumbnail": "images/feat-items-secondary-2-col.png",
+            "data": {
+                "colors": "colors-d",
+                "title": "Value propositions",
+                "subtitle": null,
+                "actions": [],
+                "columns": 2,
+                "items": [
+                    {
+                        "type": "FeaturedItem",
+                        "title": "I'm Fast",
+                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "url": "/",
+                                "style": "primary"
+                            }
+                        ],
+                        "styles": {
+                            "self": {
+                                "textAlign": "left"
+                            }
+                        }
+                    },
+                    {
+                        "type": "FeaturedItem",
+                        "title": "I'm Smart",
+                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "url": "/",
+                                "style": "primary"
+                            }
+                        ],
+                        "styles": {
+                            "self": {
+                                "textAlign": "left"
+                            }
+                        }
+                    },
+                    {
+                        "type": "FeaturedItem",
+                        "title": "I'm Focused",
+                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "url": "/",
+                                "style": "primary"
+                            }
+                        ],
+                        "styles": {
+                            "self": {
+                                "textAlign": "left"
+                            }
+                        }
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "flex-start"
+                    }
+                }
+            }
+        }
+    ]
+}

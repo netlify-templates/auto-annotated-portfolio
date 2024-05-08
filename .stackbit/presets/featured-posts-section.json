@@ -1,0 +1,198 @@
+{
+    "model": "FeaturedPostsSection",
+    "presets": [
+        {
+            "label": "Featured posts transparent - 2 columns",
+            "thumbnail": "images/posts-transparent-2-col.png",
+            "data": {
+                "colors": "colors-f",
+                "variant": "variant-a",
+                "title": "Posts:",
+                "subtitle": null,
+                "showDate": true,
+                "showAuthor": false,
+                "showExcerpt": true,
+                "showReadMoreLink": true,
+                "posts": ["content/pages/blog/post-five.md", "content/pages/blog/post-four.md"],
+                "actions": [
+                    {
+                        "type": "Link",
+                        "label": "See all posts",
+                        "altText": "See all posts",
+                        "url": "/blog"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Featured posts transparent - 3 columns",
+            "thumbnail": "images/posts-transparent-3-col.png",
+            "data": {
+                "colors": "colors-f",
+                "variant": "variant-b",
+                "title": "Posts:",
+                "subtitle": null,
+                "showDate": true,
+                "showAuthor": false,
+                "showExcerpt": true,
+                "showReadMoreLink": true,
+                "posts": ["content/pages/blog/post-five.md", "content/pages/blog/post-four.md", "content/pages/blog/post-three.md"],
+                "actions": [
+                    {
+                        "type": "Link",
+                        "label": "See all posts",
+                        "altText": "See all posts",
+                        "url": "/blog"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Featured posts transparent - list",
+            "thumbnail": "images/posts-transparent-list.png",
+            "data": {
+                "colors": "colors-f",
+                "variant": "variant-c",
+                "title": null,
+                "subtitle": null,
+                "showDate": true,
+                "showAuthor": false,
+                "showExcerpt": true,
+                "showReadMoreLink": true,
+                "posts": ["content/pages/blog/post-five.md"],
+                "actions": [],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Featured posts transparent - list alt",
+            "thumbnail": "images/posts-transparent-list-alt.png",
+            "data": {
+                "colors": "colors-f",
+                "variant": "variant-d",
+                "title": "Posts:",
+                "subtitle": null,
+                "showDate": true,
+                "showAuthor": false,
+                "showExcerpt": true,
+                "showReadMoreLink": true,
+                "posts": ["content/pages/blog/post-five.md", "content/pages/blog/post-four.md", "content/pages/blog/post-three.md"],
+                "actions": [
+                    {
+                        "type": "Link",
+                        "label": "See all posts",
+                        "altText": "See all posts",
+                        "url": "/blog"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "flex-end"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Featured posts secondary - list alt",
+            "thumbnail": "images/posts-secondary-list-alt.png",
+            "data": {
+                "colors": "colors-d",
+                "variant": "variant-d",
+                "title": "Posts:",
+                "subtitle": null,
+                "showDate": true,
+                "showAuthor": false,
+                "showExcerpt": true,
+                "showReadMoreLink": true,
+                "posts": ["content/pages/blog/post-five.md", "content/pages/blog/post-four.md", "content/pages/blog/post-three.md"],
+                "actions": [
+                    {
+                        "type": "Link",
+                        "label": "See all posts",
+                        "altText": "See all posts",
+                        "url": "/blog"
+                    }
+                ],
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
+                        "justifyContent": "center"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "subtitle": {
+                        "textAlign": "left"
+                    },
+                    "actions": {
+                        "justifyContent": "flex-end"
+                    }
+                }
+            }
+        }
+    ]
+}

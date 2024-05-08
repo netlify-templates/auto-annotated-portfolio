@@ -1,0 +1,181 @@
+{
+    "model": "ContactSection",
+    "presets": [
+        {
+            "label": "Contact transparent - no media",
+            "thumbnail": "images/contact-transparent-no-media.png",
+            "data": {
+                "colors": "colors-f",
+                "title": "Contact Me",
+                "text": "I'm look forward to hearing from you.",
+                "form": {
+                    "type": "FormBlock",
+                    "elementId": "contact-form",
+                    "action": "/.netlify/functions/submission_created",
+                    "destination": "",
+                    "fields": [
+                        {
+                            "type": "TextFormControl",
+                            "name": "name",
+                            "placeholder": "Your name",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "EmailFormControl",
+                            "name": "email",
+                            "placeholder": "Your email",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "TextareaFormControl",
+                            "name": "message",
+                            "label": "Tell me about your project",
+                            "hideLabel": true,
+                            "placeholder": "Tell me about your project",
+                            "isRequired": true,
+                            "width": "full"
+                        },
+                        {
+                            "type": "CheckboxFormControl",
+                            "name": "updates",
+                            "label": "Sign me up to receive updates",
+                            "isRequired": "false",
+                            "width": "full"
+                        }
+                    ],
+                    "submitLabel": "Send Message"
+                },
+                "media": null,
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "row"
+                    },
+                    "title": {
+                        "textAlign": "center"
+                    },
+                    "text": {
+                        "textAlign": "center"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Contact secondary - image right",
+            "thumbnail": "images/contact-secondary-image-right.png",
+            "data": {
+                "colors": "colors-d",
+                "title": "Contact Me",
+                "text": "I'm look forward to hearing from you.",
+                "form": {
+                    "type": "FormBlock",
+                    "elementId": "contact-form",
+                    "action": "/.netlify/functions/submission_created",
+                    "destination": "",
+                    "fields": [
+                        {
+                            "type": "TextFormControl",
+                            "name": "name",
+                            "placeholder": "Your name",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "EmailFormControl",
+                            "name": "email",
+                            "placeholder": "Your email",
+                            "isRequired": "true",
+                            "width": "1/2"
+                        },
+                        {
+                            "type": "TextareaFormControl",
+                            "name": "message",
+                            "label": "Tell me about your project",
+                            "hideLabel": true,
+                            "placeholder": "Tell me about your project",
+                            "isRequired": true,
+                            "width": "full"
+                        },
+                        {
+                            "type": "CheckboxFormControl",
+                            "name": "updates",
+                            "label": "Sign me up to receive updates",
+                            "isRequired": "false",
+                            "width": "full"
+                        }
+                    ],
+                    "submitLabel": "Send Message"
+                },
+                "media": {
+                    "type": "ImageBlock",
+                    "url": "/images/contact.jpg",
+                    "altText": "Contact form image"
+                },
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "wide",
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "row"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Contact primary - no media",
+            "thumbnail": "images/contact-primary-no-media.png",
+            "data": {
+                "colors": "colors-c",
+                "title": "Subscribe",
+                "text": "Join my newsletter to stay up-to-date",
+                "form": {
+                    "type": "FormBlock",
+                    "elementId": "contact-form",
+                    "action": "/.netlify/functions/submission_created",
+                    "destination": "",
+                    "fields": [
+                        {
+                            "type": "EmailFormControl",
+                            "name": "email",
+                            "placeholder": "Your email",
+                            "isRequired": "true",
+                            "width": "full"
+                        }
+                    ],
+                    "submitLabel": "Sign Up"
+                },
+                "media": null,
+                "styles": {
+                    "self": {
+                        "height": "auto",
+                        "width": "narrow",
+                        "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "flexDirection": "row"
+                    },
+                    "title": {
+                        "textAlign": "left"
+                    },
+                    "text": {
+                        "textAlign": "left"
+                    }
+                }
+            }
+        }
+    ]
+}

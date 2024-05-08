@@ -1,0 +1,47 @@
+{
+    "model": "DividerSection",
+    "presets": [
+        {
+            "label": "Divider narrow",
+            "thumbnail": "images/divider-narrow.png",
+            "data": {
+                "styles": {
+                    "self": {
+                        "width": "narrow",
+                        "padding": ["pt-36", "pb-36", "pl-4", "pr-4"],
+                        "justifyContent": "center",
+                        "borderWidth": 1
+                    }
+                }
+            }
+        },
+        {
+            "label": "Divider wide",
+            "thumbnail": "images/divider-narrow.png",
+            "data": {
+                "styles": {
+                    "self": {
+                        "width": "wide",
+                        "padding": ["pt-36", "pb-36", "pl-4", "pr-4"],
+                        "justifyContent": "center",
+                        "borderWidth": 1
+                    }
+                }
+            }
+        },
+        {
+            "label": "Divider full",
+            "thumbnail": "images/divider-full.png",
+            "data": {
+                "styles": {
+                    "self": {
+                        "width": "full",
+                        "padding": ["pt-36", "pb-36"],
+                        "justifyContent": "center",
+                        "borderWidth": 1
+                    }
+                }
+            }
+        }
+    ]
+}
