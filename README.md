@@ -1,4 +1,4 @@
-# Auto-annoteted Example: Developer Potfolio Site
+# Auto-annotated Example: Developer Portfolio Site
 
 ![Developer Portfolio](https://assets.stackbit.com/docs/personal-nextjs-starter-thumb.png)
 
