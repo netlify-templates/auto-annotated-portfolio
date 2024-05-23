@@ -37,7 +37,7 @@ This outputs your own Netlify Create URL. Open this, register or sign in, and yo
 
 ## Next Steps
 
-Here are a few suggestions on what to do next if you're new to Stackbit:
+Here are a few suggestions on what to do next if you're new to Netlify Create:
 
 - Learn [how Netlify Create works](https://docs.netlify.com/create/concepts/how-create-works/)
 - Follow the [_Getting Started_ tutorial](https://docs.netlify.com/create/get-started/nextjs-markdown/)
