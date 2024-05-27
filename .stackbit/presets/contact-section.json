@@ -17,6 +17,7 @@
                         {
                             "type": "TextFormControl",
                             "name": "name",
+                            "hideLabel": true,
                             "placeholder": "Your name",
                             "isRequired": "true",
                             "width": "1/2"
@@ -24,6 +25,7 @@
                         {
                             "type": "EmailFormControl",
                             "name": "email",
+                            "hideLabel": true,
                             "placeholder": "Your email",
                             "isRequired": "true",
                             "width": "1/2"
