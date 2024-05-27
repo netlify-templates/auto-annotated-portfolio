@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply antialiased flex flex-col min-h-screen;
+        @apply flex flex-col min-h-screen antialiased;
     }
     body > div,
     .sb-page,
@@ -76,13 +76,13 @@
             padding-left: 1.25em;
         }
         pre {
-            @apply border border-current overflow-x-auto leading-normal;
+            @apply overflow-x-auto leading-normal border border-current;
             font-size: 0.875em;
             margin: 1.5rem 0;
             padding: 1.25em;
         }
         hr {
-            @apply bg-current border-0 h-px;
+            @apply h-px bg-current border-0;
             margin: 2.5rem 0;
         }
         figure {
@@ -94,7 +94,7 @@
             margin: 0.5rem 0 0;
         }
         table {
-            @apply border border-current border-collapse text-left w-full;
+            @apply w-full text-left border border-collapse border-current;
             margin: 1.5rem 0;
         }
         caption {
@@ -104,7 +104,7 @@
         }
         th,
         td {
-            @apply border-r border-b border-current;
+            @apply border-b border-r border-current;
             padding: 0.5em;
         }
         th {
@@ -137,7 +137,7 @@
 
     /* Buttons */
     .sb-component-button {
-        @apply text-lg border-2 border-current inline-flex items-center justify-center no-underline relative text-center transition duration-200 ease-in;
+        @apply relative inline-flex items-center justify-center text-lg text-center no-underline transition duration-200 ease-in border-2 border-current;
         box-shadow: none;
     }
     .sb-component-button:not(.sb-component-button-no-hover):hover,
@@ -151,7 +151,7 @@
 
     /* Links */
     .sb-component-link {
-        @apply text-lg inline-flex items-center justify-center no-underline relative;
+        @apply relative inline-flex items-center justify-center text-lg no-underline;
     }
     .sb-component-link:not(.sb-component-link-fill) {
         box-shadow: 0 1px 0 0 currentColor;
@@ -164,7 +164,7 @@
 
     /* Socials */
     .sb-component-social {
-        @apply text-lg inline-flex items-center justify-center no-underline relative;
+        @apply relative inline-flex items-center justify-center text-lg no-underline;
     }
     .sb-component-social:not(.sb-component-social-fill) {
         @apply opacity-100 hover:opacity-80;
@@ -183,7 +183,7 @@
     .sb-component-link-fill:before,
     .sb-component-social-fill:before,
     .sb-header-logo:before {
-        @apply absolute h-full left-0 top-0 opacity-0;
+        @apply absolute top-0 left-0 h-full opacity-0;
         content: '';
         z-index: -1;
         transform: translate3d(0, -100%, 0);
@@ -200,6 +200,10 @@
     }
 
     /* Form controls */
+    .sb-component-form-block :not(data) .sb-form-control-full,
+    data:has(.sb-form-control-full) {
+        @apply sm:col-span-2;
+    }
     .sb-form-control {
         @apply mb-6;
     }
@@ -209,22 +213,22 @@
     .sb-input,
     .sb-select,
     .sb-textarea {
-        @apply bg-transparent border border-current p-3 w-full focus:outline-none sm:text-xl;
+        @apply w-full p-3 bg-transparent border border-current focus:outline-none sm:text-xl;
     }
     option {
         color: initial;
     }
     .sb-checkbox {
-        @apply appearance-none absolute select-none opacity-0;
+        @apply absolute opacity-0 appearance-none select-none;
         height: 1.5em;
         width: 1.5em;
     }
     .sb-checkbox + .sb-label {
-        @apply cursor-pointer relative sm:text-xl;
+        @apply relative cursor-pointer sm:text-xl;
         padding-left: 2.5em;
     }
     .sb-checkbox + .sb-label:before {
-        @apply absolute left-0 top-1/2 -translate-y-1/2 border border-current cursor-pointer text-center font-sans;
+        @apply absolute left-0 font-sans text-center -translate-y-1/2 border border-current cursor-pointer top-1/2;
         content: '';
         height: 1.5em;
         width: 1.5em;
@@ -234,7 +238,7 @@
         content: '\2713';
     }
     .sb-select {
-        @apply appearance-none bg-no-repeat cursor-pointer pr-7;
+        @apply bg-no-repeat appearance-none cursor-pointer pr-7;
         background-image: linear-gradient(45deg, transparent 50%, currentColor 0), linear-gradient(135deg, currentColor 50%, transparent 0);
         background-position: calc(100% - 18px) calc(1px + 50%), calc(100% - 12px) calc(1px + 50%);
         background-size: 6px 6px, 6px 6px;
@@ -263,7 +267,7 @@
         .sb-input,
         .sb-select,
         .sb-textarea {
-            @apply text-on-dark placeholder-on-dark placeholder-opacity-75;
+            @apply placeholder-opacity-75 text-on-dark placeholder-on-dark;
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
@@ -284,7 +288,7 @@
         .sb-input,
         .sb-select,
         .sb-textarea {
-            @apply text-on-light placeholder-on-light placeholder-opacity-75;
+            @apply placeholder-opacity-75 text-on-light placeholder-on-light;
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
@@ -305,7 +309,7 @@
         .sb-input,
         .sb-select,
         .sb-textarea {
-            @apply text-on-primary placeholder-on-primary placeholder-opacity-75;
+            @apply placeholder-opacity-75 text-on-primary placeholder-on-primary;
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
@@ -326,7 +330,7 @@
         .sb-input,
         .sb-select,
         .sb-textarea {
-            @apply text-on-secondary placeholder-on-secondary placeholder-opacity-75;
+            @apply placeholder-opacity-75 text-on-secondary placeholder-on-secondary;
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
@@ -347,7 +351,7 @@
         .sb-input,
         .sb-select,
         .sb-textarea {
-            @apply text-on-complementary placeholder-on-complementary placeholder-opacity-75;
+            @apply placeholder-opacity-75 text-on-complementary placeholder-on-complementary;
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
