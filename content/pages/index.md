@@ -156,14 +156,14 @@ sections:
           hideLabel: true
           placeholder: Email
           isRequired: true
-          width: full
+          width: 1/2
           type: EmailFormControl
         - name: address
           label: Address
           hideLabel: true
           placeholder: Address
           isRequired: true
-          width: full
+          width: 1/2
           type: TextFormControl
         - name: updatesConsent
           label: Sign me up to recieve updates

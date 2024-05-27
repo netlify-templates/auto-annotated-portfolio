@@ -15,11 +15,7 @@ export default function EmailFormControl(props) {
         attr.placeholder = placeholder;
     }
     return (
-        <div
-            className={classNames('sb-form-control', {
-                'sm:col-span-2': width === 'full'
-            })}
-        >
+        <div className={classNames('sb-form-control', { 'sb-form-control-full': width === 'full' })}>
             {label && (
                 <label id={labelId} className={classNames('sb-label', { 'sr-only': hideLabel })} htmlFor={name}>
                     {label}

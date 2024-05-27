@@ -12,11 +12,7 @@ export default function CheckboxFormControl(props) {
         attr.required = true;
     }
     return (
-        <div
-            className={classNames('sb-form-control', 'flex', 'items-center', {
-                'sm:col-span-2': width === 'full'
-            })}
-        >
+        <div className={classNames('sb-form-control', 'flex', 'items-center', { 'sb-form-control-full': width === 'full' })}>
             <input id={name} className="sb-checkbox" type="checkbox" name={name} {...attr} />
             {label && (
                 <label id={labelId} className="sb-label" htmlFor={name}>
