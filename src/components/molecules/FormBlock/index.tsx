@@ -6,7 +6,7 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 
 export default function FormBlock(props) {
     const formRef = React.createRef<HTMLFormElement>();
-    const { elementId, className, action, destination, fields = [], submitLabel, styles = {} } = props;
+    const { elementId, className, fields = [], submitLabel, styles = {} } = props;
 
     if (fields.length === 0) {
         return null;

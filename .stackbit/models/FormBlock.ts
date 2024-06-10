@@ -77,20 +77,6 @@ export const FormBlockModel: Model = {
             required: true
         },
         {
-            type: 'string',
-            name: 'action',
-            group: 'settings',
-            label: 'Action (form submission URL)',
-            default: '/.netlify/functions/submission_created'
-        },
-        {
-            type: 'string',
-            name: 'destination',
-            label: 'Destination (email to redirect responses)',
-            default: '',
-            group: 'settings'
-        },
-        {
             type: 'style',
             name: 'styles',
             styles: {
