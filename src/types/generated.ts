@@ -305,8 +305,6 @@ export type FormBlock = BaseContentObject & {
     fields?: (TextFormControl | EmailFormControl | TextareaFormControl | CheckboxFormControl | SelectFormControl)[];
     submitLabel?: string;
     elementId: string;
-    action?: string;
-    destination?: string;
     styles?: any;
 };
 

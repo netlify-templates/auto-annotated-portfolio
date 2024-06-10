@@ -63,8 +63,6 @@ bottomSections:
     form:
       type: FormBlock
       elementId: sign-up-form
-      destination: ''
-      action: /.netlify/functions/submission_created
       fields:
         - name: firstName
           label: First Name
