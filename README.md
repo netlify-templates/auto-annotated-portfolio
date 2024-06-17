@@ -45,7 +45,7 @@ This outputs your own Netlify visual editor URL. Open this, register or sign in,
 
 Here are a few suggestions on what to do next if you're new to Netlify visual editor:
 
-- Learn [how Netlify visual editor works](https://docs.netlify.com/create/concepts/how-create-works/)
+- Learn [how Netlify visual editor works](https://docs.netlify.com/visual-editor/overview/)
 - Check [Netlify visual editor reference documentation](https://visual-editor-reference.netlify.com/)
 
 ## Support
