@@ -2,7 +2,7 @@
 type: PostLayout
 title: Sharing my wisdom with the world 🌎
 colors: colors-a
-date: '2021-12-01'
+date: '2024-02-01'
 author: content/data/team/doris-soto.json
 excerpt: >-
   More context that may or may not be helpful
