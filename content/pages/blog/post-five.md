@@ -1,8 +1,8 @@
 ---
 type: PostLayout
-title: NFTs are so hot right now
+title: AI are so hot right now
 colors: colors-a
-date: '2021-12-02'
+date: '2024-05-02'
 author: content/data/team/doris-soto.json
 excerpt: >-
   More context that may or may not be helpful

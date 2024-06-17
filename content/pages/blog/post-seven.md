@@ -2,7 +2,7 @@
 type: PostLayout
 title: Habits of highly productive web developers ⌨️
 colors: colors-a
-date: '2022-01-04'
+date: '2024-06-10'
 author: content/data/team/doris-soto.json
 excerpt: >-
   More context that may or may not be helpful
