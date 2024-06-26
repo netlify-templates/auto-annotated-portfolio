@@ -84,7 +84,7 @@ sections:
         textAlign: left
       actions:
         justifyContent: flex-end
-    subtitle: ''
+    subtitle: These are some of my projects that you might like to check out!
     title: Projects
   - type: FeaturedPostsSection
     elementId: ''
