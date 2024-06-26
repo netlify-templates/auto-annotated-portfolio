@@ -15,8 +15,8 @@ sections:
     backgroundSize: full
     title: 'Hey, I''m Frederick'
     subtitle: >-
-      This will be the website where I share all me latest projects and all the
-      info about new games and new studios that I will be working on
+      This is my website where I share te latest projects and alot more, blogs
+      and help with scripting.
     styles:
       self:
         height: auto
