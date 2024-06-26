@@ -15,8 +15,10 @@ sections:
     backgroundSize: full
     title: 'Hey, I''m Frederick'
     subtitle: >-
-      This is my website where I share te latest projects and alot more, blogs
-      and help with scripting.
+      Welcome to my website, a hub for showcasing my work and alot more. I will
+      be making blogs every once in a while that you can read through with new
+      games and new projects that I will be working no. Whether you are a good
+      scripter or not, I have something that fits everyone's cup of tea!
     styles:
       self:
         height: auto
