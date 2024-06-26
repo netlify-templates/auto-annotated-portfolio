@@ -15,10 +15,10 @@ sections:
     backgroundSize: full
     title: 'Hey, I''m Frederick'
     subtitle: >-
-      Welcome to my website, a hub for showcasing my work and alot more. I will
-      be making blogs every once in a while that you can read through with new
-      games and new projects that I will be working no. Whether you are a good
-      scripter or not, I have something that fits everyone's cup of tea!
+      Welcome to my website, a hub for showcasing my work and much more. I will
+      be posting blogs regularly about new games and projects that I'm working
+      on. Whether you're an experienced scripter or a beginner, there's
+      something here for everyone!
     styles:
       self:
         height: auto
