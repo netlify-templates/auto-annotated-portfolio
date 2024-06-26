@@ -1,6 +1,6 @@
 {
     "type": "Config",
-    "favicon": "/images/LogoFredericky.png",
+    "favicon": "/images/LogoFrederickyWhite.png",
     "header": {
         "type": "Header",
         "headerVariant": "variant-c",
