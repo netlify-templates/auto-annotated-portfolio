@@ -13,14 +13,16 @@ sections:
   - elementId: ''
     colors: colors-f
     backgroundSize: full
-    text: >-
-      ## Hey I’m a developer. I’ve been born and raised in the world, and that’s
-      also where I’m based. I’m currently a free agent, ex-this, ex-that,
-      ex-super big name. When I’m not coding, writing or creating, I eat
-      cereals. I have a dog, check her out [@mygod](https://www.stackbit.com/).
+    text: >+
+      ## Hey, I'm Frederick, a developer who loves creating endless
+      possibilities through scripting. I always enjoy helping people with their
+      projects and ideas. When I'm not busy developing games, you'll probably
+      find me having a great time playing them. I'm a quirky and funny guy,
+      always ready for a laugh!
+
     media:
       type: ImageBlock
-      url: /images/about.jpg
+      url: /images/_37f13611-e7ba-4d7d-991a-2518e1005f72.jpg
       altText: Hero image
     styles:
       self:
@@ -63,23 +65,23 @@ sections:
     subtitle: 'I worked with these folks:'
     images:
       - type: ImageBlock
-        url: /images/logo1.svg
+        url: /images/Png.png
         altText: Logo one
         caption: Logo one
       - type: ImageBlock
-        url: /images/logo2.svg
+        url: /images/LogoFrederickyWhite.png
         altText: Logo two
         caption: Logo two
       - type: ImageBlock
-        url: /images/logo3.svg
+        url: /images/LogoFrederickyWhite.png
         altText: Logo three
         caption: Logo three
       - type: ImageBlock
-        url: /images/logo4.svg
+        url: /images/LogoFrederickyWhite.png
         altText: Logo four
         caption: Logo four
       - type: ImageBlock
-        url: /images/logo5.svg
+        url: /images/LogoFrederickyWhite.png
         altText: Logo five
         caption: Logo five
     spacing: 3
@@ -123,48 +125,58 @@ sections:
       - type: FeaturedItem
         actions:
           - type: Link
-            label: GitHub
-            url: 'https://github.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: Twitter
-            url: 'https://twitter.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: LinkedIn
-            url: 'https://www.linkedin.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: CodePen
-            url: 'https://codepen.io/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
+            label: Youtube
+            altText: ''
+            url: 'https://youtube.com/@FredericksOil'
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            elementId: ''
           - type: Link
             label: Discord
-            url: 'https://discord.com/'
+            altText: ''
+            url: 'https://discord.com/users/430358055780352000'
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            elementId: ''
+          - type: Link
+            label: Github
+            altText: ''
+            url: 'https://github.com/JarlTheGamer'
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            elementId: ''
+          - type: Link
+            label: Twitter
+            url: 'https://twitter.com/@JarlNiel'
         styles:
           self:
             textAlign: left
       - type: FeaturedItem
-        actions:
-          - type: Link
-            label: Instagram
-            url: 'https://www.instagram.com/'
+        actions: []
+        styles:
+          self:
+            textAlign: left
+        title: ''
+      - type: FeaturedItem
+        actions: []
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions: []
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions: []
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions: []
         styles:
           self:
             textAlign: left
@@ -207,21 +219,17 @@ sections:
     subtitle: 'Skills:'
     items:
       - type: Label
-        label: 'WEB 1, 2, 3'
+        label: Luau
       - type: Label
-        label: React
+        label: Video editing
       - type: Label
         label: Microsoft Office
       - type: Label
-        label: Next.js
+        label: Photoshop
       - type: Label
         label: Netlify
       - type: Label
-        label: Pancakes
-      - type: Label
-        label: C++
-      - type: Label
-        label: Swift
+        label: Python
   - type: DividerSection
     styles:
       self:
@@ -239,7 +247,7 @@ sections:
     subtitle: 'Contact:'
     colors: colors-f
     text: |
-      [thisismyemail.@myemail.me](mailto:thisismyemail.@myemail.me)
+      <FrederickyXYZ@gmail.com>
   - type: DividerSection
     styles:
       self:
@@ -257,26 +265,19 @@ sections:
     items:
       - type: FeaturedItem
         subtitle: 'Experience:'
-        text: |-
+        text: |+
           **Current**
 
-          * freelance @freelance.me
+          *   Working on paid projects
 
-          **2018-2021**
+          **2022**
 
-          * fullstack at this startup
+          *   Frederick's Oil And Company, game studio
 
-          **2015**
+          **2021**
 
-          * senior front-end at this place
+          *   Made my first horror game that was scripted pretty well
 
-          **2013**
-
-          * intern developer at a big company
-
-          **2011**
-
-          * flipping burgers
         styles:
           self:
             textAlign: left
@@ -287,18 +288,17 @@ sections:
               - pr-0
       - type: FeaturedItem
         subtitle: 'Education:'
-        text: |-
-          **2015-2018**
+        text: |+
+          **2018-2020**
 
-          * ba computer sciense at a semi fancy school
+          *   Starting to learn lua
 
-          **2014**
 
-          * react certificate somewhere
 
-          **2011**
+          **2018**
 
-          * my highschool
+          *   Started working on games
+
         styles:
           self:
             textAlign: left
