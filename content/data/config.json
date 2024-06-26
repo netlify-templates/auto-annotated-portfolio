@@ -47,7 +47,7 @@
         },
         "logo": {
             "type": "ImageBlock",
-            "url": "/images/LogoFredericky.png",
+            "url": "/images/LogoFrederickyWhite.png",
             "altText": "altText of the image",
             "caption": "Caption of the image",
             "elementId": ""
