@@ -15,9 +15,8 @@ sections:
     backgroundSize: full
     title: 'Hey, I''m Frederick'
     subtitle: >-
-      This is my info—I’m sharing it all this with ya’ll to impress you with all
-      the hard work I’ve done in the past few years. Once you’re impressed, you
-      can continue to scroll down to see more details and credentials about me.
+      This will be the website where I share all me latest projects and all the
+      info about new games and new studios that I will be working on
     styles:
       self:
         height: auto
