@@ -44,6 +44,8 @@ sections:
         justifyContent: flex-start
     type: HeroSection
     actions: []
+    text: |
+      yes
   - colors: colors-f
     type: FeaturedProjectsSection
     elementId: ''
