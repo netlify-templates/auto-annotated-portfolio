@@ -5,7 +5,6 @@ export const FooterModel: Model = {
     name: 'Footer',
     label: 'Footer',
     labelField: 'copyrightText',
-    readOnly: true,
     fields: [
         {
             type: 'list',
