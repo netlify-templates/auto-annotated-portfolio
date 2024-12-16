@@ -3,7 +3,7 @@ import { GitContentSource } from '@stackbit/cms-git';
 import { allModels } from './.stackbit/models';
 
 const config = defineStackbitConfig({
-    stackbitVersion: '~0.6.0',
+    stackbitVersion: '~0.7.0',
     ssgName: 'nextjs',
     nodeVersion: '18',
     contentSources: [

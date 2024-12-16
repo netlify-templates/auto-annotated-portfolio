@@ -5,7 +5,6 @@ export const HeaderModel: Model = {
     name: 'Header',
     label: 'Header',
     labelField: 'title',
-    readOnly: true,
     fieldGroups: [
         {
             name: 'styles',

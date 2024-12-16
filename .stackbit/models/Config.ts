@@ -7,6 +7,7 @@ export const ConfigModel: Model = {
     labelField: 'fixedLabel',
     singleInstance: true,
     file: 'content/data/config.json',
+    canDelete: false,
     fieldGroups: [
         {
             name: 'seo',

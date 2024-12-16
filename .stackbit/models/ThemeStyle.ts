@@ -5,7 +5,7 @@ export const ThemeStyleModel: Model = {
     name: 'ThemeStyle',
     label: 'Theme Style',
     singleInstance: true,
-    readOnly: true,
+    canDelete: false,
     filePath: 'content/data/style.json',
     fieldGroups: [
         {
