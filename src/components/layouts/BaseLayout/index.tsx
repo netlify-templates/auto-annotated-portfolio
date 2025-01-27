@@ -14,7 +14,7 @@ type BaseLayoutProps = React.PropsWithChildren & PageComponentProps & PageModelT
 
 const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
     const { global, ...page } = props;
-    const { site } = global;
+    const { site, styles } = global;
 
     const title = seoGenerateTitle(page, site);
     const metaTags = seoGenerateMetaTags(page, site);
@@ -23,7 +23,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
         <Annotated content={page}>
             <div className={classNames('sb-page', page?.colors || 'colors-a')}>
                 {page?.backgroundImage && <BackgroundImage {...page?.backgroundImage} />}
-                <div className="sb-base sb-default-base-layout relative">
+                <div className="relative sb-base sb-default-base-layout">
                     <Head>
                         <title>{title}</title>
                         {metaDescription && <meta name="description" content={metaDescription} />}
@@ -36,6 +36,16 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
                         })}
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
                         {site.favicon && <link rel="icon" href={site.favicon} />}
+                        <style 
+                            dangerouslySetInnerHTML={{ __html: `
+                                :root {
+                                    --on-light: ${styles.onLight};
+                                    --light: ${styles.light};
+                                    --on-dark: ${styles.onDark};
+                                    --dark: ${styles.dark};
+                                }
+                            ` }}
+                        />                       
                     </Head>
                     {site.header && (
                         <Annotated content={site}>

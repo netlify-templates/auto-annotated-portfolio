@@ -18,10 +18,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                light: themeStyle.light,
-                'on-light': themeStyle.onLight,
-                dark: themeStyle.dark,
-                'on-dark': themeStyle.onDark,
+                light: 'var(--light)',
+                'on-light': 'var(--on-light)',
+                dark: 'var(--dark)',
+                'on-dark': 'var(--on-dark)',
                 primary: themeStyle.primary,
                 'on-primary': themeStyle.onPrimary,
                 secondary: themeStyle.secondary,

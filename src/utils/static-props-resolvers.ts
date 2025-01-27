@@ -9,15 +9,18 @@ import {
     RecentPostsSection,
     RecentProjectsSection,
     PostFeedLayout,
-    ProjectFeedLayout
+    ProjectFeedLayout,
+    ThemeStyle
 } from '@/types';
 import { deepMapObject } from './data-utils';
 import { ConfigModel } from '.stackbit/models/Config';
+import { ThemeStyleModel } from '.stackbit/models/ThemeStyle';
 
 export function resolveStaticProps(urlPath: string, allData: ContentObject[]): PageComponentProps {
     const originalPage = allData.find((obj) => obj.__metadata.urlPath === urlPath);
     const globalProps: GlobalProps = {
-        site: allData.find((obj) => obj.__metadata.modelName === ConfigModel.name) as Config
+        site: allData.find((obj) => obj.__metadata.modelName === ConfigModel.name) as Config,
+        styles: allData.find((obj) => obj.__metadata.modelName === ThemeStyleModel.name) as ThemeStyle
     };
 
     function enrichContent(value: any) {
