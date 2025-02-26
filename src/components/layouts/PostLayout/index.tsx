@@ -14,7 +14,7 @@ const Component: React.FC<ComponentProps> = (props) => {
     const { global, ...page } = props;
     const { title, date, author, markdownContent, media, bottomSections = [] } = page;
     const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
-    const formattedDate = dayjs(date).format('MM-DD-YYYY');
+    const formattedDate = dayjs(date).format('YYYY-MM-DD');
 
     return (
         <BaseLayout {...props}>
@@ -22,7 +22,7 @@ const Component: React.FC<ComponentProps> = (props) => {
                 <article className="px-4 py-14 lg:py-20">
                     <div className="max-w-5xl mx-auto">
                         <header className="mb-10 sm:mb-14">
-                            <div className="uppercase mb-4 sm:mb-6">
+                            <div className="mb-4 uppercase sm:mb-6">
                                 <time dateTime={dateTimeAttr}>{formattedDate}</time>
                                 {author && (
                                     <>
@@ -39,7 +39,7 @@ const Component: React.FC<ComponentProps> = (props) => {
                             </div>
                         )}
                         {markdownContent && (
-                            <Markdown options={{ forceBlock: true, overrides: { pre: HighlightedPreBlock } }} className="sb-markdown max-w-screen-md mx-auto">
+                            <Markdown options={{ forceBlock: true, overrides: { pre: HighlightedPreBlock } }} className="max-w-screen-md mx-auto sb-markdown">
                                 {markdownContent}
                             </Markdown>
                         )}

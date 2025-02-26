@@ -174,6 +174,6 @@ function ProjectsVariantD(props) {
 
 function ProjectDate({ date }) {
     const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
-    const formattedDate = dayjs(date).format('MM-DD-YYYY');
+    const formattedDate = dayjs(date).format('YYYY-MM-DD');
     return <time dateTime={dateTimeAttr}>{formattedDate}</time>;
 }
