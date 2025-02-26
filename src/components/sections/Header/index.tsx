@@ -52,15 +52,15 @@ function HeaderVariants(props) {
 function HeaderVariantA(props) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     return (
-        <div className="flex items-stretch relative">
+        <div className="relative flex items-stretch">
             <SiteLogoLink {...logoProps} />
             {primaryLinks.length > 0 && (
-                <ul className="hidden lg:flex divide-x divide-current border-r border-current">
+                <ul className="hidden border-r border-current divide-x divide-current lg:flex">
                     <ListOfLinks links={primaryLinks} inMobileMenu={false} />
                 </ul>
             )}
             {socialLinks.length > 0 && (
-                <ul className="hidden lg:flex border-l border-current ml-auto">
+                <ul className="hidden ml-auto border-l border-current lg:flex">
                     <ListOfSocialLinks links={socialLinks} inMobileMenu={false} />
                 </ul>
             )}
@@ -72,10 +72,10 @@ function HeaderVariantA(props) {
 function HeaderVariantB(props) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     return (
-        <div className="flex items-stretch relative">
+        <div className="relative flex items-stretch">
             <SiteLogoLink {...logoProps} />
             {primaryLinks.length > 0 && (
-                <ul className="hidden lg:flex border-l border-current divide-x divide-current ml-auto">
+                <ul className="hidden ml-auto border-l border-current divide-x divide-current lg:flex">
                     <ListOfLinks links={primaryLinks} inMobileMenu={false} />
                 </ul>
             )}
@@ -96,10 +96,10 @@ function HeaderVariantB(props) {
 function HeaderVariantC(props) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     return (
-        <div className="flex items-stretch relative">
+        <div className="relative flex items-stretch">
             <SiteLogoLink {...logoProps} />
             {socialLinks.length > 0 && (
-                <ul className="hidden lg:flex border-l border-current ml-auto">
+                <ul className="hidden ml-auto border-l border-current lg:flex">
                     <ListOfSocialLinks links={socialLinks} inMobileMenu={false} />
                 </ul>
             )}
@@ -135,22 +135,22 @@ function MobileMenu(props) {
 
     return (
         <div className="ml-auto lg:hidden">
-            <button aria-label="Open Menu" className="border-l border-current h-10 min-h-full p-4 focus:outline-none" onClick={() => setIsMenuOpen(true)}>
+            <button aria-label="Open Menu" className="h-10 min-h-full p-4 border-l border-current focus:outline-none" onClick={() => setIsMenuOpen(true)}>
                 <span className="sr-only">Open Menu</span>
-                <MenuIcon className="fill-current h-6 w-6" />
+                <MenuIcon className="w-6 h-6 fill-current" />
             </button>
             <div className={classNames('sb-header-overlay', 'fixed', 'inset-0', 'overflow-y-auto', 'z-20', isMenuOpen ? 'block' : 'hidden')}>
                 <div className="flex flex-col min-h-full">
-                    <div className="border-b border-current flex items-stretch justify-between">
+                    <div className="flex items-stretch justify-between border-b border-current">
                         <SiteLogoLink {...logoProps} />
                         <div className="border-l border-current">
                             <button aria-label="Close Menu" className="h-10 min-h-full p-4 focus:outline-none" onClick={() => setIsMenuOpen(false)}>
-                                <CloseIcon className="fill-current h-6 w-6" />
+                                <CloseIcon className="w-6 h-6 fill-current" />
                             </button>
                         </div>
                     </div>
                     {(primaryLinks.length > 0 || socialLinks.length > 0) && (
-                        <div className="flex flex-col justify-center grow px-4 py-20 space-y-12">
+                        <div className="flex flex-col justify-center px-4 py-20 space-y-12 grow">
                             {primaryLinks.length > 0 && (
                                 <ul className="space-y-6">
                                     <ListOfLinks links={primaryLinks} inMobileMenu={true} />
@@ -174,8 +174,8 @@ function SiteLogoLink({ title, isTitleVisible, logo }) {
         return null;
     }
     return (
-        <div className="border-r border-current flex items-center">
-            <Link href="/" className="sb-header-logo flex items-center h-full p-4">
+        <div className="flex items-center border-r border-current">
+            <Link href="/" className="flex items-center h-full p-4 sb-header-logo">
                 {logo && <ImageBlock {...logo} className={classNames('max-h-12', { 'mr-2': isTitleVisible })} />}
                 {title && isTitleVisible && <span className="text-base tracking-widest uppercase">{title}</span>}
             </Link>

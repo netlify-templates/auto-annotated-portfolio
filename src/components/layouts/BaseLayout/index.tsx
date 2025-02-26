@@ -23,7 +23,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
         <Annotated content={page}>
             <div className={classNames('sb-page', page?.colors || 'colors-a')}>
                 {page?.backgroundImage && <BackgroundImage {...page?.backgroundImage} />}
-                <div className="sb-base sb-default-base-layout relative">
+                <div className="relative sb-base sb-default-base-layout">
                     <Head>
                         <title>{title}</title>
                         {metaDescription && <meta name="description" content={metaDescription} />}
