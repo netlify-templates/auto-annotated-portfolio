@@ -1,6 +1,7 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import * as React from 'react';
+
+import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 
 type SectionProps = React.PropsWithChildren<{
     type?: string;
@@ -20,28 +21,12 @@ export default function Section(props: SectionProps) {
 }
 
 function SectionInset(props: SectionProps) {
-    const { type, elementId, colors = 'colors-f', styles = {}, children } = props;
-    const classSuffix = type && type.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+    const { elementId, colors = 'colors-f', styles = {}, children } = props;
     return (
-        <div
-            id={elementId || null}
-            className={classNames(
-                'sb-component',
-                'sb-component-section',
-                classSuffix && `sb-component-${classSuffix}`,
-                'flex',
-                mapStyles({ justifyContent: styles.justifyContent ?? 'center' }),
-                styles.margin
-            )}
-        >
+        <div id={elementId || null} className={classNames('flex justify-center', styles.margin)}>
             <div
                 className={classNames(
-                    colors,
-                    'flex',
-                    'flex-col',
-                    'justify-center',
-                    'relative',
-                    'w-full',
+                    'flex flex-col items-center justify-center relative w-full',
                     mapStyles({ width: styles.width ?? 'wide' }),
                     mapStyles({ height: styles.height ?? 'auto' }),
                     styles.padding ?? 'py-12 px-4',
@@ -52,27 +37,22 @@ function SectionInset(props: SectionProps) {
                 style={{
                     borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : null
                 }}
+                data-theme={colors}
             >
-                <div className="relative w-full">{children}</div>
+                {children}
             </div>
         </div>
     );
 }
 
 function SectionFullWidth(props: SectionProps) {
-    const { type, elementId, colors = 'colors-f', styles = {}, children } = props;
-    const classSuffix = type && type.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+    const { elementId, colors = 'colors-f', styles = {}, children } = props;
     return (
         <div
+            data-theme={colors}
             id={elementId || null}
             className={classNames(
-                'sb-component',
-                'sb-component-section',
-                classSuffix && `sb-component-${classSuffix}`,
-                colors,
-                'flex',
-                'flex-col',
-                'justify-center',
+                'flex flex-col justify-center items-center',
                 mapStyles({ height: styles.height ?? 'auto' }),
                 styles.margin,
                 styles.padding ?? 'py-12 px-4',
@@ -84,9 +64,7 @@ function SectionFullWidth(props: SectionProps) {
                 borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: styles.justifyContent ?? 'center' }))}>
-                <div className={classNames('relative', 'w-full', mapStyles({ width: styles.width ?? 'wide' }))}>{children}</div>
-            </div>
+            <div className={classNames('w-full', mapStyles({ width: styles.width ?? 'wide' }))}>{children}</div>
         </div>
     );
 }

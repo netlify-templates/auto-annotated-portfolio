@@ -26,16 +26,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }
@@ -65,16 +56,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }

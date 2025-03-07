@@ -45,7 +45,12 @@
                             "width": "full"
                         }
                     ],
-                    "submitLabel": "Send Message"
+                    "submitLabel": "Send Message",
+                    "styles": {
+                        "self": {
+                            "textAlign": "center"
+                        }
+                    }
                 },
                 "media": null,
                 "styles": {
@@ -53,14 +58,7 @@
                         "height": "auto",
                         "width": "narrow",
                         "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "row"
-                    },
-                    "title": {
-                        "textAlign": "center"
-                    },
-                    "text": {
+                        "flexDirection": "row",
                         "textAlign": "center"
                     }
                 }
@@ -108,7 +106,12 @@
                             "width": "full"
                         }
                     ],
-                    "submitLabel": "Send Message"
+                    "submitLabel": "Send Message",
+                    "styles": {
+                        "self": {
+                            "textAlign": "left"
+                        }
+                    }
                 },
                 "media": {
                     "type": "ImageBlock",
@@ -120,14 +123,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "row"
-                    },
-                    "title": {
-                        "textAlign": "left"
-                    },
-                    "text": {
+                        "flexDirection": "row",
                         "textAlign": "left"
                     }
                 }
@@ -152,7 +148,12 @@
                             "width": "full"
                         }
                     ],
-                    "submitLabel": "Sign Up"
+                    "submitLabel": "Sign Up",
+                    "styles": {
+                        "self": {
+                            "textAlign": "left"
+                        }
+                    }
                 },
                 "media": null,
                 "styles": {
@@ -160,14 +161,7 @@
                         "height": "auto",
                         "width": "narrow",
                         "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "row"
-                    },
-                    "title": {
-                        "textAlign": "left"
-                    },
-                    "text": {
+                        "flexDirection": "row",
                         "textAlign": "left"
                     }
                 }

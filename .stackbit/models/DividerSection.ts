@@ -1,5 +1,7 @@
 import { Model } from '@stackbit/types';
 
+import { settingFields, settingFieldsGroup } from './section-common-fields';
+
 export const DividerSectionModel: Model = {
     type: 'object',
     name: 'DividerSection',
@@ -7,13 +9,7 @@ export const DividerSectionModel: Model = {
     labelField: 'title',
     thumbnail: 'https://assets.stackbit.com/components/models/thumbnails/default.png',
     groups: ['SectionModels'],
-    fieldGroups: [
-        {
-            name: 'settings',
-            label: 'Settings',
-            icon: 'gear'
-        }
-    ],
+    fieldGroups: [...settingFieldsGroup],
     fields: [
         {
             type: 'string',
@@ -21,14 +17,7 @@ export const DividerSectionModel: Model = {
             description: 'The value of the field is used for presentation purposes in Stackbit',
             default: 'Divider'
         },
-        {
-            type: 'string',
-            name: 'elementId',
-            group: 'settings',
-            label: 'Element ID',
-            description: 'The unique ID for an HTML element, must not contain whitespace',
-            default: ''
-        },
+        ...settingFields,
         {
             type: 'style',
             name: 'styles',
@@ -36,7 +25,6 @@ export const DividerSectionModel: Model = {
                 self: {
                     width: ['narrow', 'wide', 'full'],
                     padding: ['tw0:96'],
-                    justifyContent: ['flex-start', 'flex-end', 'center'],
                     borderWidth: ['1:8'],
                     borderStyle: '*'
                 }
@@ -45,7 +33,6 @@ export const DividerSectionModel: Model = {
                 self: {
                     width: 'wide',
                     padding: ['pt-12', 'pb-12', 'pl-4', 'pr-4'],
-                    justifyContent: 'center',
                     borderWidth: 1,
                     borderStyle: 'solid'
                 }

@@ -34,17 +34,8 @@ sections:
           - pb-48
           - pl-4
           - pr-4
-        alignItems: center
-        justifyContent: center
         flexDirection: row-reverse
-      title:
         textAlign: left
-      subtitle:
-        textAlign: left
-      text:
-        textAlign: left
-      actions:
-        justifyContent: flex-start
     type: HeroSection
     actions: []
   - colors: colors-f
@@ -67,24 +58,13 @@ sections:
       self:
         height: auto
         width: wide
-        margin:
-          - mt-0
-          - mb-0
-          - ml-0
-          - mr-0
         padding:
           - pt-24
           - pb-24
           - pl-4
           - pr-4
-        justifyContent: center
-      title:
         textAlign: left
-      subtitle:
-        textAlign: left
-      actions:
-        justifyContent: flex-end
-    subtitle: 'Projects'
+    subtitle: Projects
   - type: FeaturedPostsSection
     elementId: ''
     colors: colors-f
@@ -106,27 +86,12 @@ sections:
       self:
         height: auto
         width: narrow
-        margin:
-          - mt-0
-          - mb-0
-          - ml-0
-          - mr-0
         padding:
           - pt-28
           - pb-48
           - pl-4
           - pr-4
-        justifyContent: center
-        borderRadius: none
-        borderWidth: 0
-        borderStyle: none
-        borderColor: border-dark
-      title:
         textAlign: left
-      subtitle:
-        textAlign: left
-      actions:
-        justifyContent: flex-end
   - type: ContactSection
     colors: colors-f
     backgroundSize: full
@@ -170,7 +135,7 @@ sections:
           type: CheckboxFormControl
       submitLabel: "Submit \U0001F680"
       styles:
-        submitLabel:
+        self:
           textAlign: center
     styles:
       self:
@@ -186,11 +151,6 @@ sections:
           - pb-24
           - pr-4
           - pl-4
-        alignItems: center
-        justifyContent: center
         flexDirection: row
-      title:
-        textAlign: left
-      text:
         textAlign: left
 ---

@@ -45,6 +45,10 @@ export const SocialModel: Model = {
             label: 'Icon',
             options: [
                 {
+                    label: 'Bluesky',
+                    value: 'bluesky'
+                },
+                {
                     label: 'Facebook',
                     value: 'facebook'
                 },
@@ -65,7 +69,7 @@ export const SocialModel: Model = {
                     value: 'reddit'
                 },
                 {
-                    label: 'Twitter',
+                    label: 'X (Twitter)',
                     value: 'twitter'
                 },
                 {

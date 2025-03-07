@@ -25,9 +25,25 @@ projectFeed:
         - pl-4
         - pr-4
         - pb-12
-styles:
-  title:
-    textAlign: left
+topSections:
+  - type: HeroSection
+    title: Projects
+    subtitle: ''
+    actions: []
+    colors: colors-f
+    backgroundSize: full
+    elementId: ''
+    styles:
+      self:
+        height: auto
+        width: narrow
+        padding:
+          - pt-16
+          - pb-16
+          - pl-4
+          - pr-4
+        flexDirection: row
+        textAlign: left
 bottomSections:
   - type: ContactSection
     backgroundSize: full
@@ -72,7 +88,7 @@ bottomSections:
           type: CheckboxFormControl
       submitLabel: "Submit \U0001F680"
       styles:
-        submitLabel:
+        self:
           textAlign: center
     styles:
       self:
@@ -88,11 +104,6 @@ bottomSections:
           - pb-24
           - pr-4
           - pl-4
-        alignItems: center
-        justifyContent: center
         flexDirection: row
-      title:
-        textAlign: left
-      text:
         textAlign: left
 ---

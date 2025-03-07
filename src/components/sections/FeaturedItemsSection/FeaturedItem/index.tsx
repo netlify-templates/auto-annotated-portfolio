@@ -1,66 +1,56 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import Markdown from 'markdown-to-jsx';
 
-import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles-to-class-names';
-import Action from '../../../atoms/Action';
-import ImageBlock from '../../../molecules/ImageBlock';
+import { Annotated } from '@/components/Annotated';
+import Action from '@/components/atoms/Action';
+import ImageBlock from '@/components/molecules/ImageBlock';
+import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 
 export default function FeaturedItem(props) {
-    const { elementId, title, subtitle, text, featuredImage, actions = [], styles = {} } = props;
+    const { elementId, title, subtitle, text, featuredImage, actions = [], styles = {}, headingLevel } = props;
     const { self = {} } = styles;
     const { borderWidth, ...otherSelfStyles } = self;
+    const TitleTag = headingLevel;
     return (
-        <article
-            id={elementId || null}
-            className={classNames('sb-component', 'sb-component-block', 'sb-component-item', mapStyles(otherSelfStyles))}
-            style={{
-                borderWidth: borderWidth ? `${borderWidth}px` : null
-            }}
-        >
-            {featuredImage && (
-                <div className="mb-6">
-                    <ImageBlock {...featuredImage} className="inline-block" />
-                </div>
-            )}
-            {title && <h3 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h3>}
-            {subtitle && <p className={classNames('text-lg', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-1': title })}>{subtitle}</p>}
-            {text && (
-                <Markdown
-                    options={{ forceBlock: true, forceWrapper: true }}
-                    className={classNames('sb-markdown', {
-                        'mt-4': title || subtitle
-                    })}
-                >
-                    {text}
-                </Markdown>
-            )}
-            <ItemActions actions={actions} textAlign={otherSelfStyles.textAlign} hasTopMargin={!!(title || subtitle || text)} />
-        </article>
-    );
-}
-
-function ItemActions(props) {
-    const { actions = [], textAlign, hasTopMargin } = props;
-    if (actions.length === 0) {
-        return null;
-    }
-    return (
-        <div
-            className={classNames('overflow-x-hidden', {
-                'mt-4': hasTopMargin
-            })}
-        >
-            <div
-                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', {
-                    'justify-center': textAlign === 'center',
-                    'justify-end': textAlign === 'right'
-                })}
+        <Annotated content={props}>
+            <article
+                id={elementId || null}
+                className={classNames('overflow-hidden', mapStyles(otherSelfStyles))}
+                style={{
+                    borderWidth: borderWidth ? `${borderWidth}px` : null
+                }}
             >
-                {actions.map((action, index) => (
-                    <Action key={index} {...action} className="my-2 mx-2 lg:whitespace-nowrap" />
-                ))}
-            </div>
-        </div>
+                {featuredImage && (
+                    <div className="mb-6">
+                        <ImageBlock {...featuredImage} className="inline-block" />
+                    </div>
+                )}
+                {title && <TitleTag className="text-3xl sm:text-4xl">{title}</TitleTag>}
+                {subtitle && <p className={classNames('text-lg', { 'mt-1': title })}>{subtitle}</p>}
+                {text && (
+                    <Markdown
+                        options={{ forceBlock: true, forceWrapper: true }}
+                        className={classNames('prose sm:prose-lg', {
+                            'mt-4': title || subtitle
+                        })}
+                    >
+                        {text}
+                    </Markdown>
+                )}
+                {actions?.length > 0 && (
+                    <div
+                        className={classNames('flex flex-wrap items-center gap-4', {
+                            'justify-center': otherSelfStyles.textAlign === 'center',
+                            'justify-end': otherSelfStyles.textAlign === 'right',
+                            'mt-4': title || subtitle || text
+                        })}
+                    >
+                        {actions.map((action, index) => (
+                            <Action key={index} {...action} />
+                        ))}
+                    </div>
+                )}
+            </article>
+        </Annotated>
     );
 }

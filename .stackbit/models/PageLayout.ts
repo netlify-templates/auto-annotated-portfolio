@@ -1,5 +1,5 @@
 import { Model } from '@stackbit/types';
-import { seoFields, seoFieldGroups } from './seo-fields';
+import { seoFields, seoFieldsGroup, styleFields, styleFieldsGroup } from './page-common-fields';
 
 export const PageLayoutModel: Model = {
     type: 'page',
@@ -9,14 +9,7 @@ export const PageLayoutModel: Model = {
     urlPath: '/{slug}',
     filePath: 'content/pages/{slug}.md',
     thumbnail: 'https://assets.stackbit.com/components/models/thumbnails/default.png',
-    fieldGroups: [
-        ...seoFieldGroups,
-        {
-            name: 'styles',
-            label: 'Styles',
-            icon: 'palette'
-        }
-    ],
+    fieldGroups: [...seoFieldsGroup, ...styleFieldsGroup],
     fields: [
         {
             type: 'string',
@@ -66,84 +59,14 @@ export const PageLayoutModel: Model = {
                             width: 'wide',
                             margin: ['mt-0', 'mb-0', 'ml-0', 'mr-0'],
                             padding: ['pt-12', 'pb-12', 'pl-4', 'pr-4'],
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexDirection: 'row'
-                        },
-                        title: {
+                            flexDirection: 'row',
                             textAlign: 'left'
-                        },
-                        subtitle: {
-                            fontWeight: 400,
-                            textAlign: 'left'
-                        },
-                        text: {
-                            textAlign: 'left'
-                        },
-                        actions: {
-                            justifyContent: 'flex-start'
                         }
                     }
                 }
             ]
         },
         ...seoFields,
-        {
-            type: 'enum',
-            name: 'colors',
-            label: 'Colors',
-            description: 'The color theme of the page',
-            group: 'styles',
-            controlType: 'palette',
-            options: [
-                {
-                    label: 'Colors A',
-                    value: 'colors-a',
-                    textColor: '$onDark',
-                    backgroundColor: '$dark',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors B',
-                    value: 'colors-b',
-                    textColor: '$onLight',
-                    backgroundColor: '$light',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors C',
-                    value: 'colors-c',
-                    textColor: '$onPrimary',
-                    backgroundColor: '$primary',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors D',
-                    value: 'colors-d',
-                    textColor: '$onSecondary',
-                    backgroundColor: '$secondary',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors E',
-                    value: 'colors-e',
-                    textColor: '$onComplementary',
-                    backgroundColor: '$complementary',
-                    borderColor: '#ececec'
-                }
-            ],
-            default: 'colors-a'
-        },
-        {
-            type: 'model',
-            name: 'backgroundImage',
-            group: 'styles',
-            label: 'Page background image',
-            models: ['BackgroundImage'],
-            default: {
-                type: 'BackgroundImage',
-                url: '/images/bg2.jpg'
-            }
-        }
+        ...styleFields
     ]
 };

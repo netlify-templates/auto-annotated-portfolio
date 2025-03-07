@@ -23,18 +23,8 @@
                         "height": "auto",
                         "width": "narrow",
                         "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "col"
-                    },
-                    "title": {
+                        "flexDirection": "col",
                         "textAlign": "left"
-                    },
-                    "text": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "flex-start"
                     }
                 }
             }
@@ -61,18 +51,8 @@
                         "height": "auto",
                         "width": "narrow",
                         "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "col"
-                    },
-                    "title": {
+                        "flexDirection": "col",
                         "textAlign": "center"
-                    },
-                    "text": {
-                        "textAlign": "center"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }
@@ -109,18 +89,8 @@
                         "height": "auto",
                         "width": "narrow",
                         "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "row"
-                    },
-                    "title": {
+                        "flexDirection": "row",
                         "textAlign": "left"
-                    },
-                    "text": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "flex-start"
                     }
                 }
             }

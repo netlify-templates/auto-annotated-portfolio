@@ -1,39 +1,44 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import Link from '../Link';
-import { iconMap } from '../../svgs';
+
 import { Annotated } from '@/components/Annotated';
+import { iconMap } from '@/components/svgs';
+import Link from '../Link';
 
 export default function Action(props) {
-    const { type, elementId, className, label, altText, url, showIcon, icon, iconPosition = 'right', style = 'primary' } = props;
+    const {
+        type,
+        elementId,
+        className,
+        label,
+        altText,
+        url,
+        showIcon,
+        icon,
+        iconPosition = 'right',
+        style = 'primary'
+    } = props;
     const IconComponent = icon ? iconMap[icon] : null;
+
+    const baseClasses = [
+        'relative inline-flex items-center justify-center gap-1.5 text-center text-lg leading-tight no-underline transition lg:whitespace-nowrap'
+    ];
+    if (type === 'Button') {
+        label ? baseClasses.push('py-4 px-5') : baseClasses.push('p-4');
+        style === 'secondary' && baseClasses.push('rounded-full');
+        baseClasses.push('border-2 border-current hover:bottom-shadow-6 hover:-translate-y-1.5');
+    } else {
+        baseClasses.push('uppercase bottom-shadow-1 hover:bottom-shadow-5');
+    }
+
     return (
         <Annotated content={props}>
-            <Link
-                href={url}
-                aria-label={altText}
-                id={elementId || null}
-                className={classNames(
-                    'sb-component',
-                    'sb-component-block',
-                    type === 'Button' ? 'sb-component-button' : 'sb-component-link',
-                    {
-                        'sb-component-button-primary': type === 'Button' && style === 'primary',
-                        'sb-component-button-secondary': type === 'Button' && style === 'secondary',
-                        'sb-component-button-icon': type === 'Button' && !label
-                    },
-                    className
+            <Link href={url} aria-label={altText} id={elementId || null} className={classNames(baseClasses, className)}>
+                {showIcon && IconComponent && iconPosition === 'left' && (
+                    <IconComponent className="fill-current h-icon w-icon" />
                 )}
-            >
-                {label && <span>{label}</span>}
-                {showIcon && IconComponent && (
-                    <IconComponent
-                        className={classNames('fill-current h-5 w-5', {
-                            'order-first': iconPosition === 'left',
-                            'mr-1.5': label && iconPosition === 'left',
-                            'ml-1.5': label && iconPosition === 'right'
-                        })}
-                    />
+                {label}
+                {showIcon && IconComponent && iconPosition === 'right' && (
+                    <IconComponent className="fill-current h-icon w-icon" />
                 )}
             </Link>
         </Annotated>

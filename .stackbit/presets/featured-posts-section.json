@@ -27,16 +27,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }
@@ -53,7 +44,11 @@
                 "showAuthor": false,
                 "showExcerpt": true,
                 "showReadMoreLink": true,
-                "posts": ["content/pages/blog/post-five.md", "content/pages/blog/post-four.md", "content/pages/blog/post-three.md"],
+                "posts": [
+                    "content/pages/blog/post-five.md",
+                    "content/pages/blog/post-four.md",
+                    "content/pages/blog/post-three.md"
+                ],
                 "actions": [
                     {
                         "type": "Link",
@@ -67,16 +62,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }
@@ -100,16 +86,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }
@@ -126,7 +103,11 @@
                 "showAuthor": false,
                 "showExcerpt": true,
                 "showReadMoreLink": true,
-                "posts": ["content/pages/blog/post-five.md", "content/pages/blog/post-four.md", "content/pages/blog/post-three.md"],
+                "posts": [
+                    "content/pages/blog/post-five.md",
+                    "content/pages/blog/post-four.md",
+                    "content/pages/blog/post-three.md"
+                ],
                 "actions": [
                     {
                         "type": "Link",
@@ -140,16 +121,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "flex-end"
                     }
                 }
             }
@@ -166,7 +138,11 @@
                 "showAuthor": false,
                 "showExcerpt": true,
                 "showReadMoreLink": true,
-                "posts": ["content/pages/blog/post-five.md", "content/pages/blog/post-four.md", "content/pages/blog/post-three.md"],
+                "posts": [
+                    "content/pages/blog/post-five.md",
+                    "content/pages/blog/post-four.md",
+                    "content/pages/blog/post-three.md"
+                ],
                 "actions": [
                     {
                         "type": "Link",
@@ -180,16 +156,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "flex-end"
                     }
                 }
             }

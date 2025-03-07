@@ -1,7 +1,8 @@
-import * as React from 'react';
-import NextLink, { LinkProps as NextLinkProps } from 'next/link';
-import { Annotated } from '@/components/Annotated';
 import { ContentObject, PageModelType } from '@/types';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+import * as React from 'react';
+
+import { Annotated } from '@/components/Annotated';
 
 type RegularLinkProps = React.PropsWithChildren & NextLinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 

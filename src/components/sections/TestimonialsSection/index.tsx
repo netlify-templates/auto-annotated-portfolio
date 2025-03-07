@@ -1,20 +1,27 @@
-import * as React from 'react';
-import Markdown from 'markdown-to-jsx';
 import classNames from 'classnames';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import ImageBlock from '@/components/molecules/ImageBlock';
+import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 import Section from '../Section';
-import ImageBlock from '../../molecules/ImageBlock';
 
 export default function TestimonialsSection(props) {
-    const { type, elementId, colors, variant, title, subtitle, testimonials, styles = {} } = props;
+    const { elementId, colors, title, subtitle, styles = {}, ...rest } = props;
+    const sectionAlign = styles.self?.textAlign ?? 'left';
     return (
-        <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
-            {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
-            {subtitle && (
-                <p className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': title })}>{subtitle}</p>
+        <Section elementId={elementId} colors={colors} styles={styles.self}>
+            {title && (
+                <h2 className={classNames('text-4xl sm:text-5xl', mapStyles({ textAlign: sectionAlign }))}>{title}</h2>
             )}
-            <TestimonialVariants variant={variant} testimonials={testimonials} hasTopMargin={!!(title || subtitle)} />
+            {subtitle && (
+                <p
+                    className={classNames('text-lg sm:text-xl', mapStyles({ textAlign: sectionAlign }), {
+                        'mt-6': title
+                    })}
+                >
+                    {subtitle}
+                </p>
+            )}
+            <TestimonialVariants {...rest} className={title || subtitle ? 'mt-16 sm:mt-20' : undefined} />
         </Section>
     );
 }
@@ -22,48 +29,37 @@ export default function TestimonialsSection(props) {
 function TestimonialVariants(props) {
     const { variant = 'variant-a', ...rest } = props;
     switch (variant) {
-        case 'variant-a':
-            return <TestimonialsVariantA {...rest} />;
         case 'variant-b':
             return <TestimonialsVariantB {...rest} />;
         case 'variant-c':
             return <TestimonialsVariantC {...rest} />;
         default:
-            return null;
+            return <TestimonialsVariantA {...rest} />;
     }
 }
 
 function TestimonialsVariantA(props) {
-    const { testimonials = [], hasTopMargin } = props;
+    const { testimonials = [], className } = props;
     if (testimonials.length === 0) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'md:grid-cols-2', 'gap-y-16', 'md:gap-y-20', { 'mt-16 sm:mt-20': hasTopMargin })}>
+        <div className={classNames('grid md:grid-cols-2 gap-y-16 md:gap-y-20', className)}>
             {testimonials.map((testimonial, index) => (
-                <blockquote key={index} className={classNames(index % 2 === 0 ? 'md:pr-12' : 'md:border-l md:pl-12')}>
+                <blockquote
+                    key={index}
+                    className={classNames('space-y-8', index % 2 === 0 ? 'md:pr-12' : 'md:border-l md:pl-12')}
+                >
                     {testimonial.image && (
-                        <div className="mb-8">
-                            <ImageBlock {...testimonial.image} className="w-24 h-24 object-cover rounded-full" />
+                        <div>
+                            <ImageBlock {...testimonial.image} className="object-cover w-24 h-24 rounded-full" />
                         </div>
                     )}
-                    {testimonial.quote && (
-                        <Markdown options={{ forceBlock: true, forceWrapper: true }} className="sb-markdown text-3xl sm:text-4xl sm:leading-tight">
-                            {testimonial.quote}
-                        </Markdown>
-                    )}
+                    {testimonial.quote && <p className="text-3xl sm:text-4xl sm:leading-tight">{testimonial.quote}</p>}
                     {(testimonial.name || testimonial.title) && (
-                        <footer className="mt-8 md:mt-12">
-                            {testimonial.name && (
-                                <div className={classNames('text-lg', testimonial.styles?.name ? mapStyles(testimonial.styles?.name) : null)}>
-                                    {testimonial.name}
-                                </div>
-                            )}
-                            {testimonial.title && (
-                                <div className={classNames('text-lg', testimonial.styles?.title ? mapStyles(testimonial.styles?.title) : null)}>
-                                    {testimonial.title}
-                                </div>
-                            )}
+                        <footer className="text-lg">
+                            {testimonial.name && <div>{testimonial.name}</div>}
+                            {testimonial.title && <div>{testimonial.title}</div>}
                         </footer>
                     )}
                 </blockquote>
@@ -73,41 +69,33 @@ function TestimonialsVariantA(props) {
 }
 
 function TestimonialsVariantB(props) {
-    const { testimonials = [], hasTopMargin } = props;
+    const { testimonials = [], className } = props;
     if (testimonials.length === 0) {
         return null;
     }
     return (
-        <div className={classNames('space-y-16', 'sm:space-y-24', { 'mt-16 sm:mt-20': hasTopMargin })}>
+        <div className={classNames('space-y-16 sm:space-y-24', className)}>
             {testimonials.map((testimonial, index) => (
                 <blockquote key={index}>
                     {testimonial.quote && (
-                        <Markdown
-                            options={{ forceBlock: true, forceWrapper: true }}
-                            className="sb-markdown text-3xl sm:text-4xl sm:leading-tight lg:text-5xl lg:leading-tight"
-                        >
+                        <p className="text-3xl sm:text-4xl sm:leading-tight lg:text-5xl lg:leading-tight">
                             {testimonial.quote}
-                        </Markdown>
+                        </p>
                     )}
                     {(testimonial.name || testimonial.title || testimonial.image) && (
-                        <footer className="flex flex-wrap items-center mt-6 md:mt-8">
+                        <footer className="flex flex-wrap items-center mt-8 gap-x-6 gap-y-2">
                             {testimonial.image && (
-                                <div className="shrink-0 mt-4 mr-6">
-                                    <ImageBlock {...testimonial.image} className="w-12 h-12 sm:w-20 sm:h-20 object-cover rounded-full" />
+                                <div className="shrink-0">
+                                    <ImageBlock
+                                        {...testimonial.image}
+                                        className="object-cover w-12 h-12 rounded-full sm:w-20 sm:h-20"
+                                    />
                                 </div>
                             )}
                             {(testimonial.name || testimonial.title) && (
-                                <div className="grow mt-4">
-                                    {testimonial.name && (
-                                        <div className={classNames('text-lg', testimonial.styles?.name ? mapStyles(testimonial.styles?.name) : null)}>
-                                            {testimonial.name}
-                                        </div>
-                                    )}
-                                    {testimonial.title && (
-                                        <div className={classNames('text-lg', testimonial.styles?.title ? mapStyles(testimonial.styles?.title) : null)}>
-                                            {testimonial.title}
-                                        </div>
-                                    )}
+                                <div className="text-lg grow">
+                                    {testimonial.name && <div>{testimonial.name}</div>}
+                                    {testimonial.title && <div>{testimonial.title}</div>}
                                 </div>
                             )}
                         </footer>
@@ -119,39 +107,35 @@ function TestimonialsVariantB(props) {
 }
 
 function TestimonialsVariantC(props) {
-    const { testimonials = [], hasTopMargin } = props;
+    const { testimonials = [], className } = props;
     if (testimonials.length === 0) {
         return null;
     }
     return (
-        <div className={classNames('space-y-16', 'sm:space-y-24', { 'mt-16 sm:mt-20': hasTopMargin })}>
+        <div className={classNames('space-y-16 sm:space-y-24', className)}>
             {testimonials.map((testimonial, index) => (
-                <blockquote key={index} className={classNames('flex', 'flex-col', 'md:items-center', index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse')}>
+                <blockquote
+                    key={index}
+                    className={classNames(
+                        'flex flex-col gap-8 md:items-center',
+                        index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    )}
+                >
                     {testimonial.image && (
-                        <div className={classNames('shrink-0', 'max-w-lg', 'mb-8', 'md:mb-0', 'md:w-2/5', index % 2 === 0 ? 'md:mr-8' : 'md:ml-8')}>
+                        <div className="max-w-lg shrink-0 md:w-2/5">
                             <ImageBlock {...testimonial.image} className="w-full" />
                         </div>
                     )}
                     <div className="grow">
                         {testimonial.quote && (
-                            <Markdown options={{ forceBlock: true, forceWrapper: true }} className="sb-markdown text-3xl sm:text-4xl sm:leading-tight">
-                                {testimonial.quote}
-                            </Markdown>
+                            <p className="text-3xl sm:text-4xl sm:leading-tight">{testimonial.quote}</p>
                         )}
                         {(testimonial.name || testimonial.title) && (
-                            <footer className="flex flex-wrap items-center mt-6 md:mt-8">
+                            <footer className="flex flex-wrap items-center mt-8">
                                 {(testimonial.name || testimonial.title) && (
-                                    <div className="grow mt-4">
-                                        {testimonial.name && (
-                                            <div className={classNames('text-lg', testimonial.styles?.name ? mapStyles(testimonial.styles?.name) : null)}>
-                                                {testimonial.name}
-                                            </div>
-                                        )}
-                                        {testimonial.title && (
-                                            <div className={classNames('text-lg', testimonial.styles?.title ? mapStyles(testimonial.styles?.title) : null)}>
-                                                {testimonial.title}
-                                            </div>
-                                        )}
+                                    <div className="text-lg grow">
+                                        {testimonial.name && <div>{testimonial.name}</div>}
+                                        {testimonial.title && <div>{testimonial.title}</div>}
                                     </div>
                                 )}
                             </footer>

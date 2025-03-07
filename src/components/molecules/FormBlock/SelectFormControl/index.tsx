@@ -1,4 +1,3 @@
-import * as React from 'react';
 import classNames from 'classnames';
 
 export default function SelectFormControl(props) {
@@ -12,13 +11,22 @@ export default function SelectFormControl(props) {
         attr.required = true;
     }
     return (
-        <div className={classNames('sb-form-control', { 'sb-form-control-full': width === 'full' })}>
+        <div className={classNames({ 'sm:col-span-2': width === 'full' })}>
             {label && (
-                <label id={labelId} className={classNames('sb-label', { 'sr-only': hideLabel })} htmlFor={name}>
+                <label
+                    id={labelId}
+                    className={classNames('inline-block mb-1 sm:text-xl', { 'sr-only': hideLabel })}
+                    htmlFor={name}
+                >
                     {label}
                 </label>
             )}
-            <select id={name} className="sb-select" name={name} {...attr}>
+            <select
+                id={name}
+                className="w-full py-3 pl-3 bg-transparent border border-current pr-7 placeholder:text-current placeholder:opacity-50 focus:outline-none focus:ring-1 focus:ring-current sm:text-xl"
+                name={name}
+                {...attr}
+            >
                 {defaultValue && <option value="">{defaultValue}</option>}
                 {options.length > 0 &&
                     options.map((option, index) => (

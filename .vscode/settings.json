@@ -2,7 +2,9 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",

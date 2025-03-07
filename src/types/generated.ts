@@ -65,9 +65,6 @@ export type ContentObject =
     | TextFormControl
     | TextSection
     | ThemeStyle
-    | ThemeStyleButton
-    | ThemeStyleHeading
-    | ThemeStyleLink
     | VideoBlock;
 
 export type ContentObjectType =
@@ -113,16 +110,22 @@ export type ContentObjectType =
     | 'TextFormControl'
     | 'TextSection'
     | 'ThemeStyle'
-    | 'ThemeStyleButton'
-    | 'ThemeStyleHeading'
-    | 'ThemeStyleLink'
     | 'VideoBlock';
 
 export type BackgroundImage = BaseContentObject & {
     type: 'BackgroundImage';
     url?: string;
     backgroundSize: 'auto' | 'cover' | 'contain';
-    backgroundPosition: 'bottom' | 'center' | 'left' | 'left-bottom' | 'left-top' | 'right' | 'right-bottom' | 'right-top' | 'top';
+    backgroundPosition:
+        | 'bottom'
+        | 'center'
+        | 'left'
+        | 'left-bottom'
+        | 'left-top'
+        | 'right'
+        | 'right-bottom'
+        | 'right-top'
+        | 'top';
     backgroundRepeat: 'repeat' | 'repeat-x' | 'repeat-y' | 'no-repeat';
     opacity?: number;
 };
@@ -679,41 +682,9 @@ export type ThemeStyle = BaseContentObject & {
     onSecondary?: string;
     complementary?: string;
     onComplementary?: string;
-    fontBody: 'fontPrimary' | 'fontSecondary';
-    h1?: ThemeStyleHeading;
-    h2?: ThemeStyleHeading;
-    h3?: ThemeStyleHeading;
-    h4?: ThemeStyleHeading;
-    h5?: ThemeStyleHeading;
-    h6?: ThemeStyleHeading;
-    buttonPrimary?: ThemeStyleButton;
-    buttonSecondary?: ThemeStyleButton;
-    link?: ThemeStyleLink;
-};
-
-export type ThemeStyleButton = BaseContentObject & {
-    type: 'ThemeStyleButton';
-    weight: 'normal' | 'medium';
-    case: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
-    letterSpacing: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
-    horizontalPadding?: number;
-    verticalPadding?: number;
-};
-
-export type ThemeStyleHeading = BaseContentObject & {
-    type: 'ThemeStyleHeading';
-    size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
-    weight: 'normal' | 'medium';
-    decoration: 'none' | 'underline' | 'line-through';
-    case: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
-    letterSpacing: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
-};
-
-export type ThemeStyleLink = BaseContentObject & {
-    type: 'ThemeStyleLink';
-    weight: 'normal' | 'medium';
-    case: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
-    letterSpacing: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
+    fontBody: '"DM Mono", monospace' | '"Azeret Mono", monospace';
+    headingWeight?: 'normal' | 'medium';
+    headingCase?: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
 };
 
 export type VideoBlock = BaseContentObject & {

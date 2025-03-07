@@ -26,15 +26,6 @@
                                 "height": "auto",
                                 "width": "narrow",
                                 "padding": ["pt-12", "pb-36", "pl-4", "pr-4"],
-                                "justifyContent": "center"
-                            },
-                            "title": {
-                                "textAlign": "left"
-                            },
-                            "subtitle": {
-                                "textAlign": "left"
-                            },
-                            "text": {
                                 "textAlign": "left"
                             }
                         }
@@ -69,21 +60,8 @@
                                 "height": "auto",
                                 "width": "wide",
                                 "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
-                                "alignItems": "center",
-                                "justifyContent": "center",
-                                "flexDirection": "row"
-                            },
-                            "title": {
+                                "flexDirection": "row",
                                 "textAlign": "left"
-                            },
-                            "subtitle": {
-                                "textAlign": "left"
-                            },
-                            "text": {
-                                "textAlign": "left"
-                            },
-                            "actions": {
-                                "justifyContent": "flex-start"
                             }
                         }
                     },
@@ -114,16 +92,7 @@
                                 "height": "auto",
                                 "width": "wide",
                                 "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                                "justifyContent": "center"
-                            },
-                            "title": {
                                 "textAlign": "left"
-                            },
-                            "subtitle": {
-                                "textAlign": "left"
-                            },
-                            "actions": {
-                                "justifyContent": "flex-end"
                             }
                         }
                     },
@@ -153,16 +122,7 @@
                                 "height": "auto",
                                 "width": "narrow",
                                 "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                                "justifyContent": "center"
-                            },
-                            "title": {
                                 "textAlign": "left"
-                            },
-                            "subtitle": {
-                                "textAlign": "left"
-                            },
-                            "actions": {
-                                "justifyContent": "flex-end"
                             }
                         }
                     },
@@ -216,7 +176,7 @@
                             ],
                             "submitLabel": "Submit 🚀",
                             "styles": {
-                                "submitLabel": {
+                                "self": {
                                     "textAlign": "center"
                                 }
                             }
@@ -226,14 +186,7 @@
                                 "height": "auto",
                                 "width": "narrow",
                                 "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                                "alignItems": "center",
-                                "justifyContent": "center",
-                                "flexDirection": "row"
-                            },
-                            "title": {
-                                "textAlign": "left"
-                            },
-                            "text": {
+                                "flexDirection": "row",
                                 "textAlign": "left"
                             }
                         }
@@ -272,21 +225,8 @@
                                 "height": "auto",
                                 "width": "wide",
                                 "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
-                                "alignItems": "center",
-                                "justifyContent": "center",
-                                "flexDirection": "row"
-                            },
-                            "title": {
+                                "flexDirection": "row",
                                 "textAlign": "left"
-                            },
-                            "subtitle": {
-                                "textAlign": "left"
-                            },
-                            "text": {
-                                "textAlign": "left"
-                            },
-                            "actions": {
-                                "justifyContent": "flex-start"
                             }
                         }
                     },
@@ -296,7 +236,6 @@
                             "self": {
                                 "width": "wide",
                                 "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
-                                "justifyContent": "center",
                                 "borderWidth": 1
                             }
                         }
@@ -343,12 +282,6 @@
                                 "height": "auto",
                                 "width": "wide",
                                 "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                                "justifyContent": "center"
-                            },
-                            "title": {
-                                "textAlign": "center"
-                            },
-                            "subtitle": {
                                 "textAlign": "center"
                             }
                         }
@@ -359,7 +292,6 @@
                             "self": {
                                 "width": "wide",
                                 "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
-                                "justifyContent": "center",
                                 "borderWidth": 1
                             }
                         }
@@ -409,7 +341,6 @@
                             "self": {
                                 "width": "wide",
                                 "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
-                                "justifyContent": "center",
                                 "borderWidth": 1
                             }
                         }
@@ -446,7 +377,7 @@
                                 "actions": [
                                     {
                                         "type": "Link",
-                                        "label": "Twitter",
+                                        "label": "X (Twitter)",
                                         "showIcon": false,
                                         "url": "https://twitter.com/"
                                     }
@@ -537,16 +468,7 @@
                                 "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
                                 "padding": ["pt-28", "pb-36", "pl-4", "pr-4"],
-                                "justifyContent": "center"
-                            },
-                            "title": {
                                 "textAlign": "center"
-                            },
-                            "subtitle": {
-                                "textAlign": "center"
-                            },
-                            "actions": {
-                                "justifyContent": "flex-start"
                             }
                         }
                     },
@@ -556,7 +478,6 @@
                             "self": {
                                 "width": "wide",
                                 "padding": ["pt-12", "pb-12", "pl-0", "pr-0"],
-                                "justifyContent": "center",
                                 "borderWidth": 1
                             }
                         }
@@ -611,7 +532,7 @@
                             ],
                             "submitLabel": "Submit 🚀",
                             "styles": {
-                                "submitLabel": {
+                                "self": {
                                     "textAlign": "center"
                                 }
                             }
@@ -621,14 +542,7 @@
                                 "height": "auto",
                                 "width": "narrow",
                                 "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                                "alignItems": "center",
-                                "justifyContent": "center",
-                                "flexDirection": "row"
-                            },
-                            "title": {
-                                "textAlign": "left"
-                            },
-                            "text": {
+                                "flexDirection": "row",
                                 "textAlign": "left"
                             }
                         }
