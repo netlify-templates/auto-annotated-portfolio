@@ -1,5 +1,5 @@
 import { Model } from '@stackbit/types';
-import { seoFields, seoFieldGroups } from './seo-fields';
+import { seoFields, seoFieldsGroup, styleFields, styleFieldsGroup } from './page-common-fields';
 
 export const ProjectLayoutModel: Model = {
     type: 'page',
@@ -8,14 +8,7 @@ export const ProjectLayoutModel: Model = {
     urlPath: '/projects/{slug}',
     filePath: 'content/pages/projects/{slug}.md',
     thumbnail: 'https://assets.stackbit.com/components/models/thumbnails/default.png',
-    fieldGroups: [
-        ...seoFieldGroups,
-        {
-            name: 'styles',
-            label: 'Styles',
-            icon: 'palette'
-        }
-    ],
+    fieldGroups: [...seoFieldsGroup, ...styleFieldsGroup],
     fields: [
         {
             type: 'string',
@@ -40,7 +33,8 @@ export const ProjectLayoutModel: Model = {
             type: 'string',
             name: 'description',
             label: 'Description',
-            default: 'Nunc rutrum felis dui, ut consequat sapien scelerisque vel. Integer condimentum dignissim justo vel faucibus.'
+            default:
+                'Nunc rutrum felis dui, ut consequat sapien scelerisque vel. Integer condimentum dignissim justo vel faucibus.'
         },
         {
             type: 'model',
@@ -76,62 +70,6 @@ export const ProjectLayoutModel: Model = {
             }
         },
         ...seoFields,
-        {
-            type: 'enum',
-            name: 'colors',
-            label: 'Colors',
-            description: 'The color theme of the page',
-            group: 'styles',
-            controlType: 'palette',
-            options: [
-                {
-                    label: 'Colors A',
-                    value: 'colors-a',
-                    textColor: '$onDark',
-                    backgroundColor: '$dark',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors B',
-                    value: 'colors-b',
-                    textColor: '$onLight',
-                    backgroundColor: '$light',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors C',
-                    value: 'colors-c',
-                    textColor: '$onPrimary',
-                    backgroundColor: '$primary',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors D',
-                    value: 'colors-d',
-                    textColor: '$onSecondary',
-                    backgroundColor: '$secondary',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors E',
-                    value: 'colors-e',
-                    textColor: '$onComplementary',
-                    backgroundColor: '$complementary',
-                    borderColor: '#ececec'
-                }
-            ],
-            default: 'colors-a'
-        },
-        {
-            type: 'model',
-            name: 'backgroundImage',
-            group: 'styles',
-            label: 'Project background image',
-            models: ['BackgroundImage'],
-            default: {
-                type: 'BackgroundImage',
-                url: '/images/bg2.jpg'
-            }
-        }
+        ...styleFields
     ]
 };

@@ -1,35 +1,46 @@
-import * as React from 'react';
-import Markdown from 'markdown-to-jsx';
 import classNames from 'classnames';
+import Markdown from 'markdown-to-jsx';
 
-import { DynamicComponent } from '../../components-registry';
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { DynamicComponent } from '@/components/components-registry';
+import FormBlock from '@/components/molecules/FormBlock';
+import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 import Section from '../Section';
-import FormBlock from '../../molecules/FormBlock';
 
 export default function ContactSection(props) {
-    const { type, elementId, colors, backgroundSize, title, text, form, media, styles = {} } = props;
-    const sectionFlexDirection = styles.self?.flexDirection ?? 'row';
-    const sectionAlignItems = styles.self?.alignItems ?? 'center';
+    const { elementId, colors, backgroundSize, title, text, form, media, styles = {} } = props;
+    const sectionAlign = styles.self?.textAlign ?? 'left';
     return (
-        <Section type={type} elementId={elementId} colors={colors} backgroundSize={backgroundSize} styles={styles.self}>
-            <div
-                className={classNames('flex', mapFlexDirectionStyles(sectionFlexDirection), mapStyles({ alignItems: sectionAlignItems }), 'space-y-8', {
-                    'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row',
-                    'space-y-reverse lg:space-y-0 lg:space-x-8 lg:space-x-reverse': sectionFlexDirection === 'row-reverse',
-                    'space-y-reverse': sectionFlexDirection === 'col-reverse'
-                })}
-            >
+        <Section elementId={elementId} colors={colors} backgroundSize={backgroundSize} styles={styles.self}>
+            <div className={classNames('flex gap-8', mapFlexDirectionStyles(styles.self?.flexDirection ?? 'row'))}>
                 <div className="flex-1 w-full">
-                    <ContactBody title={title} text={text} styles={styles} />
-                    {form && (
-                        <div className={classNames('sb-contact-section-form', { 'mt-12': title || text })}>
-                            <FormBlock {...form} className="inline-block w-full" />
-                        </div>
+                    {title && (
+                        <h2 className={classNames('text-4xl sm:text-5xl', mapStyles({ textAlign: sectionAlign }))}>
+                            {title}
+                        </h2>
                     )}
+                    {text && (
+                        <Markdown
+                            options={{ forceBlock: true, forceWrapper: true }}
+                            className={classNames(
+                                'max-w-none prose sm:prose-lg',
+                                mapStyles({ textAlign: sectionAlign }),
+                                {
+                                    'mt-4': title
+                                }
+                            )}
+                        >
+                            {text}
+                        </Markdown>
+                    )}
+                    {form && <FormBlock {...form} className={classNames({ 'mt-12': title || text })} />}
                 </div>
                 {media && (
-                    <div className="flex-1 w-full">
+                    <div
+                        className={classNames('flex flex-1 w-full', {
+                            'justify-center': sectionAlign === 'center',
+                            'justify-end': sectionAlign === 'right'
+                        })}
+                    >
                         <ContactMedia media={media} />
                     </div>
                 )}
@@ -42,33 +53,15 @@ function ContactMedia({ media }) {
     return <DynamicComponent {...media} />;
 }
 
-function ContactBody(props) {
-    return (
-        <>
-            {props.title && <h2 className={classNames(props.styles?.title ? mapStyles(props.styles?.title) : null)}>{props.title}</h2>}
-            {props.text && (
-                <Markdown
-                    options={{ forceBlock: true, forceWrapper: true }}
-                    className={classNames('sb-markdown', props.styles?.text ? mapStyles(props.styles?.text) : null, { 'mt-4': props.title })}
-                >
-                    {props.text}
-                </Markdown>
-            )}
-        </>
-    );
-}
-
 function mapFlexDirectionStyles(flexDirection?: 'row' | 'row-reverse' | 'col' | 'col-reverse') {
     switch (flexDirection) {
-        case 'row':
-            return ['flex-col', 'lg:flex-row'];
         case 'row-reverse':
-            return ['flex-col-reverse', 'lg:flex-row-reverse'];
+            return 'flex-col-reverse lg:flex-row-reverse lg:items-center';
         case 'col':
-            return ['flex-col'];
+            return 'flex-col';
         case 'col-reverse':
-            return ['flex-col-reverse'];
+            return 'flex-col-reverse';
         default:
-            return null;
+            return 'flex-col lg:flex-row lg:items-center';
     }
 }

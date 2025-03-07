@@ -27,16 +27,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }
@@ -53,7 +44,11 @@
                 "showDescription": true,
                 "showReadMoreLink": true,
                 "showFeaturedImage": true,
-                "projects": ["content/pages/projects/project-one.md", "content/pages/projects/project-two.md", "content/pages/projects/project-three.md"],
+                "projects": [
+                    "content/pages/projects/project-one.md",
+                    "content/pages/projects/project-two.md",
+                    "content/pages/projects/project-three.md"
+                ],
                 "actions": [
                     {
                         "type": "Link",
@@ -67,16 +62,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }
@@ -93,7 +79,11 @@
                 "showDescription": true,
                 "showReadMoreLink": true,
                 "showFeaturedImage": true,
-                "projects": ["content/pages/projects/project-one.md", "content/pages/projects/project-two.md", "content/pages/projects/project-three.md"],
+                "projects": [
+                    "content/pages/projects/project-one.md",
+                    "content/pages/projects/project-two.md",
+                    "content/pages/projects/project-three.md"
+                ],
                 "actions": [
                     {
                         "type": "Link",
@@ -107,16 +97,7 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
                         "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "center"
                     }
                 }
             }

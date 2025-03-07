@@ -1,23 +1,26 @@
+import { ConfigModel } from '.stackbit/models/Config';
+import { ThemeStyleModel } from '.stackbit/models/ThemeStyle';
 import {
     Config,
     ContentObject,
     ContentObjectType,
     GlobalProps,
     PageComponentProps,
+    PostFeedLayout,
     PostLayout,
+    ProjectFeedLayout,
     ProjectLayout,
     RecentPostsSection,
     RecentProjectsSection,
-    PostFeedLayout,
-    ProjectFeedLayout
+    ThemeStyle
 } from '@/types';
 import { deepMapObject } from './data-utils';
-import { ConfigModel } from '.stackbit/models/Config';
 
 export function resolveStaticProps(urlPath: string, allData: ContentObject[]): PageComponentProps {
     const originalPage = allData.find((obj) => obj.__metadata.urlPath === urlPath);
     const globalProps: GlobalProps = {
-        site: allData.find((obj) => obj.__metadata.modelName === ConfigModel.name) as Config
+        site: allData.find((obj) => obj.__metadata.modelName === ConfigModel.name) as Config,
+        theme: allData.find((obj) => obj.__metadata.modelName === ThemeStyleModel.name) as ThemeStyle
     };
 
     function enrichContent(value: any) {
@@ -74,7 +77,10 @@ const PropsResolvers: Partial<Record<ContentObjectType, ResolverFunction>> = {
         };
     },
     RecentProjectsSection: (props, allData) => {
-        const recentProjects = getAllProjectsSorted(allData).slice(0, (props as RecentProjectsSection).recentCount || 3);
+        const recentProjects = getAllProjectsSorted(allData).slice(
+            0,
+            (props as RecentProjectsSection).recentCount || 3
+        );
         return {
             ...props,
             projects: recentProjects
@@ -90,6 +96,8 @@ function getAllPostsSorted(objects: ContentObject[]) {
 
 function getAllProjectsSorted(objects: ContentObject[]) {
     const all = objects.filter((object) => object.__metadata?.modelName === 'ProjectLayout') as ProjectLayout[];
-    const sorted = all.sort((projectA, projectB) => new Date(projectB.date).getTime() - new Date(projectA.date).getTime());
+    const sorted = all.sort(
+        (projectA, projectB) => new Date(projectB.date).getTime() - new Date(projectA.date).getTime()
+    );
     return sorted;
 }

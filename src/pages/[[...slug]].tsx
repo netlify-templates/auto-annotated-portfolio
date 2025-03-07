@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
-import { DynamicComponent } from '../components/components-registry';
-import { resolveStaticProps } from '../utils/static-props-resolvers';
-import { allContent } from '../utils/content';
-import { seoGenerateTitle, seoGenerateMetaTags, seoGenerateMetaDescription } from '../utils/seo-utils';
+import { DynamicComponent } from '@/components/components-registry';
 import { PageComponentProps } from '@/types';
+import { allContent } from '@/utils/content';
+import { seoGenerateMetaDescription, seoGenerateMetaTags, seoGenerateTitle } from '@/utils/seo-utils';
+import { resolveStaticProps } from '@/utils/static-props-resolvers';
 
 const Page: React.FC<PageComponentProps> = (props) => {
     const { global, ...page } = props;

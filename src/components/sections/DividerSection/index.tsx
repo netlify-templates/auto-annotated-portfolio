@@ -1,8 +1,7 @@
-import * as React from 'react';
 import classNames from 'classnames';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
-import { getDataAttrs } from '../../../utils/get-data-attrs';
+import { getDataAttrs } from '@/utils/get-data-attrs';
+import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 
 export default function DividerSection(props) {
     const { elementId, styles = {} } = props;
@@ -10,23 +9,12 @@ export default function DividerSection(props) {
         <div
             id={elementId || null}
             {...getDataAttrs(props)}
-            className={classNames(
-                'sb-component',
-                'sb-component-section',
-                'sb-component-divider-section',
-                'w-full',
-                'flex',
-                mapStyles({ justifyContent: styles.self?.justifyContent ?? 'center' }),
-                styles.self?.padding ?? 'py-12 px-4'
-            )}
+            className={classNames('w-full flex justify-center', styles.self?.padding ?? 'py-12 px-4')}
         >
             <div
                 className={classNames(
-                    'h-0',
-                    'w-full',
+                    'h-0 w-full border-t border-current',
                     mapStyles({ width: styles.self?.width ?? 'wide' }),
-                    'border-t',
-                    'border-current',
                     mapStyles({ borderStyle: styles.self?.borderStyle ?? 'solid' })
                 )}
                 style={{

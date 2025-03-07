@@ -1,6 +1,6 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import getVideoData from '../../../utils/get-video-data';
+
+import getVideoData from '@/utils/get-video-data';
 
 const videoServiceMap = {
     youtube: YouTubeVideo,
@@ -18,15 +18,21 @@ export default function VideoBlock(props) {
     return (
         <div
             id={elementId || null}
-            className={classNames('sb-component', 'sb-component-block', 'sb-component-video-block', className, 'overflow-hidden', 'relative', 'w-full', 'h-0', {
-                'pt-3/4': aspectRatio === '4:3',
-                'pt-9/16': aspectRatio === '16:9'
-            })}
+            className={classNames(
+                'w-full relative overflow-hidden',
+                {
+                    'aspect-4/3': aspectRatio === '4:3',
+                    'aspect-video': aspectRatio === '16:9'
+                },
+                className
+            )}
         >
             {videoData.id && VideoComponent ? (
                 <VideoComponent id={videoData.id} autoplay={autoplay} loop={loop} muted={muted} controls={controls} />
             ) : (
-                <p className="absolute italic left-0 text-center top-1/2 -translate-y-1/2 w-full">Video URL is not supported.</p>
+                <p className="absolute left-0 w-full italic text-center -translate-y-1/2 top-1/2">
+                    Video URL is not supported.
+                </p>
             )}
         </div>
     );
@@ -46,7 +52,7 @@ function YouTubeVideo({ id, autoplay, loop, muted, controls }) {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="absolute left-0 top-0 h-full w-full"
+            className="absolute top-0 left-0 w-full h-full"
         ></iframe>
     );
 }
@@ -65,7 +71,7 @@ function VimeoVideo({ id, autoplay, loop, muted, controls }) {
             title="Vimeo video player"
             frameBorder="0"
             allowFullScreen
-            className="absolute left-0 top-0 h-full w-full"
+            className="absolute top-0 left-0 w-full h-full"
         ></iframe>
     );
 }
@@ -78,7 +84,7 @@ function SelfHostedVideo({ id, autoplay, loop, muted, controls }) {
             {...(muted && { muted: true })}
             {...(controls && { controls: true })}
             playsInline
-            className="absolute left-0 top-0 h-full w-full"
+            className="absolute top-0 left-0 w-full h-full"
         >
             <source src={id} type="video/mp4" />
         </video>

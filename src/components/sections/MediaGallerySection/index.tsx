@@ -1,41 +1,19 @@
-import * as React from 'react';
 import classNames from 'classnames';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import ImageBlock from '@/components/molecules/ImageBlock';
+import type { ImageBlock as ImageBlockProps, MediaGallerySection as MediaGallerySectionProps } from '@/types';
+import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 import Section from '../Section';
-import ImageBlock from '../../molecules/ImageBlock';
-
-type MediaGallerySectionProps = {
-    type: string;
-    elementId: string;
-    colors?: 'colors-a' | 'colors-b' | 'colors-c' | 'colors-d' | 'colors-e' | 'colors-f';
-    title?: string;
-    subtitle?: string;
-    images?: Image[];
-    spacing?: number;
-    columns?: number;
-    aspectRatio?: string;
-    showCaption: boolean;
-    enableHover: boolean;
-    styles?: any;
-};
 
 type MediaGalleryItemProps = {
-    image: Image;
+    image: ImageBlockProps;
     showCaption: boolean;
     enableHover: boolean;
     aspectRatio: string;
 };
 
-type Image = {
-    url: string;
-    altText: string;
-    caption: string;
-};
-
 export default function MediaGallerySection(props: MediaGallerySectionProps) {
     const {
-        type,
         elementId,
         colors,
         title,
@@ -48,12 +26,15 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
         enableHover,
         styles = {}
     } = props;
+    const sectionAlign = styles.self?.textAlign ?? 'left';
     return (
-        <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
-            {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
+        <Section elementId={elementId} colors={colors} styles={styles.self}>
+            {title && (
+                <h2 className={classNames('text-4xl sm:text-5xl', mapStyles({ textAlign: sectionAlign }))}>{title}</h2>
+            )}
             {subtitle && (
                 <p
-                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
+                    className={classNames('text-lg sm:text-xl', mapStyles({ textAlign: sectionAlign }), {
                         'mt-6': title
                     })}
                 >
@@ -62,7 +43,7 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
             )}
             {images.length > 0 && (
                 <div
-                    className={classNames('grid', 'place-items-center', mapColStyles(columns), {
+                    className={classNames('grid place-items-center', mapColStyles(columns), {
                         'mt-12': title || subtitle
                     })}
                     style={{
@@ -70,7 +51,13 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
                     }}
                 >
                     {images.map((image, index) => (
-                        <MediaGalleryImage key={index} image={image} showCaption={showCaption} enableHover={enableHover} aspectRatio={aspectRatio} />
+                        <MediaGalleryImage
+                            key={index}
+                            image={image}
+                            showCaption={showCaption}
+                            enableHover={enableHover}
+                            aspectRatio={aspectRatio}
+                        />
                     ))}
                 </div>
             )}
@@ -84,20 +71,17 @@ function MediaGalleryImage(props: MediaGalleryItemProps) {
         return null;
     }
     return (
-        <figure
-            className={classNames('overflow-hidden', 'relative', 'w-full', mapAspectRatioStyles(aspectRatio), {
-                'h-0': aspectRatio !== 'auto'
-            })}
-        >
+        <figure className={classNames('overflow-hidden', 'relative', 'w-full', mapAspectRatioStyles(aspectRatio))}>
             <ImageBlock
                 {...image}
-                className={classNames('w-full', {
-                    'h-full absolute left-0 top-0 object-cover': aspectRatio !== 'auto',
+                className={classNames('w-full h-full object-cover', {
                     'transition-transform hover:scale-105': enableHover
                 })}
             />
             {showCaption && image.caption && (
-                <figcaption className="absolute bg-white/50 text-dark left-0 mx-2 bottom-2 p-1.5 text-xs pointer-events-none">{image.caption}</figcaption>
+                <figcaption className="absolute bg-inverse/70 text-inverse left-0 mx-2 bottom-2 p-1.5 text-xs pointer-events-none">
+                    {image.caption}
+                </figcaption>
             )}
         </figure>
     );
@@ -106,17 +90,17 @@ function MediaGalleryImage(props: MediaGalleryItemProps) {
 function mapAspectRatioStyles(aspectRatio) {
     switch (aspectRatio) {
         case '1:1':
-            return 'pt-1/1';
+            return 'aspect-square';
         case '2:3':
-            return 'pt-3/2';
+            return 'aspect-2/3';
         case '3:2':
-            return 'pt-2/3';
+            return 'aspect-3/2';
         case '3:4':
-            return 'pt-4/3';
+            return 'aspect-3/4';
         case '4:3':
-            return 'pt-3/4';
+            return 'aspect-4/3';
         case '16:9':
-            return 'pt-9/16';
+            return 'aspect-video';
         default:
             return null;
     }

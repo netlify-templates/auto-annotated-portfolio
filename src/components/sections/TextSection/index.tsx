@@ -1,43 +1,33 @@
-import * as React from 'react';
-import Markdown from 'markdown-to-jsx';
 import classNames from 'classnames';
+import Markdown from 'markdown-to-jsx';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 import Section from '../Section';
 
 export default function TextSection(props) {
-    const { type, elementId, colors, variant, title, subtitle, text, styles = {} } = props;
+    const { elementId, colors, variant = 'variant-a', styles = {}, ...rest } = props;
+    const sectionAlign = styles.self?.textAlign ?? 'left';
     return (
-        <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
-            <TextBodyVariants variant={variant} title={title} subtitle={subtitle} text={text} styles={styles} />
+        <Section elementId={elementId} colors={colors} styles={styles.self}>
+            {variant === 'variant-b' ? (
+                <TextTwoCol {...rest} align={sectionAlign} />
+            ) : (
+                <TextOneCol {...rest} align={sectionAlign} />
+            )}
         </Section>
     );
 }
 
-function TextBodyVariants(props) {
-    const { variant = 'variant-a', ...rest } = props;
-    switch (variant) {
-        case 'variant-a':
-            return <TextBodyVariantA {...rest} />;
-        case 'variant-b':
-            return <TextBodyVariantB {...rest} />;
-        default:
-            return null;
-    }
-}
-
-function TextBodyVariantA(props) {
-    const { title, subtitle, text, styles = {} } = props;
+function TextOneCol(props) {
+    const { title, subtitle, text, align } = props;
     return (
-        <div>
-            {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
-            {subtitle && (
-                <p className={classNames('text-xl', 'sm:text-2xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': title })}>{subtitle}</p>
-            )}
+        <div className={classNames(mapStyles({ textAlign: align }))}>
+            {title && <h2 className="text-4xl sm:text-5xl">{title}</h2>}
+            {subtitle && <p className={classNames('text-xl sm:text-2xl', { 'mt-2': title })}>{subtitle}</p>}
             {text && (
                 <Markdown
                     options={{ forceBlock: true, forceWrapper: true }}
-                    className={classNames('sb-markdown', 'sm:text-lg', styles.text ? mapStyles(styles.text) : null, {
+                    className={classNames('max-w-none prose sm:prose-lg', {
                         'mt-6': title || subtitle
                     })}
                 >
@@ -48,29 +38,21 @@ function TextBodyVariantA(props) {
     );
 }
 
-function TextBodyVariantB(props) {
-    const { title, subtitle, text, styles = {} } = props;
+function TextTwoCol(props) {
+    const { title, subtitle, text, align } = props;
     return (
-        <div className="flex flex-wrap">
+        <div className={classNames('flex flex-wrap gap-6', mapStyles({ textAlign: align }))}>
             {(title || subtitle) && (
-                <div className={classNames('w-full', { 'lg:w-1/3 lg:pr-3': text })}>
-                    {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
-                    {subtitle && (
-                        <p
-                            className={classNames('text-xl', 'sm:text-2xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
-                                'mt-2': title
-                            })}
-                        >
-                            {subtitle}
-                        </p>
-                    )}
+                <div className={classNames('w-full', { 'lg:flex-1': text })}>
+                    {title && <h2 className="text-4xl sm:text-5xl">{title}</h2>}
+                    {subtitle && <p className={classNames('text-xl sm:text-2xl', { 'mt-2': title })}>{subtitle}</p>}
                 </div>
             )}
             {text && (
-                <div className={classNames('w-full', { 'mt-12 lg:mt-0 lg:w-2/3 lg:pl-3': title || subtitle })}>
+                <div className={classNames('w-full', { 'lg:flex-2': title || subtitle })}>
                     <Markdown
                         options={{ forceBlock: true, forceWrapper: true }}
-                        className={classNames('sb-markdown', 'sm:text-lg', styles.text ? mapStyles(styles.text) : null)}
+                        className="prose max-w-none sm:prose-lg"
                     >
                         {text}
                     </Markdown>

@@ -53,7 +53,8 @@ export const ConfigModel: Model = {
             type: 'image',
             name: 'defaultSocialImage',
             label: 'Default image for social sharing',
-            description: 'Default image to use for the og:image meta tag in all pages, except in pages that define another image.',
+            description:
+                'Default image to use for the og:image meta tag in all pages, except in pages that define another image.',
             default: null,
             group: 'seo'
         },

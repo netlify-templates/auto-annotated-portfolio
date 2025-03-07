@@ -40,9 +40,6 @@ import { TextareaFormControlModel } from './TextareaFormControl';
 import { TextFormControlModel } from './TextFormControl';
 import { TextSectionModel } from './TextSection';
 import { ThemeStyleModel } from './ThemeStyle';
-import { ThemeStyleButtonModel } from './ThemeStyleButton';
-import { ThemeStyleHeadingModel } from './ThemeStyleHeading';
-import { ThemeStyleLinkModel } from './ThemeStyleLink';
 import { VideoBlockModel } from './VideoBlock';
 
 export const allModels = [
@@ -88,8 +85,5 @@ export const allModels = [
     TextFormControlModel,
     TextSectionModel,
     ThemeStyleModel,
-    ThemeStyleButtonModel,
-    ThemeStyleHeadingModel,
-    ThemeStyleLinkModel,
     VideoBlockModel
 ];

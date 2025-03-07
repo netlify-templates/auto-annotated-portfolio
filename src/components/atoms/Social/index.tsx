@@ -1,8 +1,8 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import Link from '../Link';
-import { iconMap } from '../../svgs';
+
 import { Annotated } from '@/components/Annotated';
+import { iconMap } from '@/components/svgs';
+import Link from '../Link';
 
 export default function Social(props) {
     const { elementId, className, label, altText, url, icon = 'facebook' } = props;
@@ -14,10 +14,10 @@ export default function Social(props) {
                 href={url}
                 aria-label={altText}
                 id={elementId || null}
-                className={classNames('sb-component', 'sb-component-block', 'sb-component-social', className)}
+                className={classNames('inline-flex items-center justify-center no-underline', className)}
             >
                 {label && <span className="sr-only">{label}</span>}
-                {IconComponent && <IconComponent className="fill-current h-5 w-5" />}
+                {IconComponent && <IconComponent className="fill-current w-icon h-icon" />}
             </Link>
         </Annotated>
     );

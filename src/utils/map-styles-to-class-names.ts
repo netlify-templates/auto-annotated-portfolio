@@ -28,8 +28,8 @@ const TAILWIND_MAP = {
     },
     borderRadius: {
         none: 'rounded-none',
-        'xx-small': 'rounded-sm',
-        'x-small': 'rounded',
+        'xx-small': 'rounded-xs',
+        'x-small': 'rounded-sm',
         small: 'rounded-md',
         medium: 'rounded-lg',
         large: 'rounded-xl',

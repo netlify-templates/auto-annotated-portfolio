@@ -132,7 +132,7 @@ export const ButtonModel: Model = {
                     value: 'send'
                 },
                 {
-                    label: 'Twitter',
+                    label: 'X (Twitter)',
                     value: 'twitter'
                 },
                 {

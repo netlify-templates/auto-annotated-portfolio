@@ -37,23 +37,12 @@ bottomSections:
       self:
         height: auto
         width: wide
-        margin:
-          - mt-0
-          - mb-0
-          - ml-0
-          - mr-0
         padding:
           - pt-12
           - pb-56
           - pr-4
           - pl-4
-        justifyContent: center
-      title:
         textAlign: left
-      subtitle:
-        textAlign: left
-      actions:
-        justifyContent: center
     showFeaturedImage: true
     showReadMoreLink: true
   - type: ContactSection
@@ -92,28 +81,18 @@ bottomSections:
           type: CheckboxFormControl
       submitLabel: "Submit \U0001F680"
       styles:
-        submitLabel:
+        self:
           textAlign: center
     styles:
       self:
         height: auto
         width: wide
-        margin:
-          - mt-0
-          - mb-0
-          - ml-4
-          - mr-4
         padding:
           - pt-24
           - pb-24
           - pr-4
           - pl-4
-        alignItems: center
-        justifyContent: center
         flexDirection: row
-      title:
-        textAlign: left
-      text:
         textAlign: left
 ---
 

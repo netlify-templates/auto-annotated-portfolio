@@ -45,12 +45,6 @@
                         "height": "auto",
                         "width": "wide",
                         "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "textAlign": "center"
-                    },
-                    "subtitle": {
                         "textAlign": "center"
                     }
                 }
@@ -73,12 +67,6 @@
                         "height": "auto",
                         "width": "full",
                         "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "textAlign": "center"
-                    },
-                    "subtitle": {
                         "textAlign": "center"
                     }
                 }
@@ -101,12 +89,6 @@
                         "height": "auto",
                         "width": "narrow",
                         "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "justifyContent": "center"
-                    },
-                    "title": {
-                        "textAlign": "center"
-                    },
-                    "subtitle": {
                         "textAlign": "center"
                     }
                 }

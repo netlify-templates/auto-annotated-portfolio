@@ -25,7 +25,13 @@ export const FormBlockModel: Model = {
             label: 'Fields',
             items: {
                 type: 'model',
-                models: ['TextFormControl', 'EmailFormControl', 'TextareaFormControl', 'CheckboxFormControl', 'SelectFormControl']
+                models: [
+                    'TextFormControl',
+                    'EmailFormControl',
+                    'TextareaFormControl',
+                    'CheckboxFormControl',
+                    'SelectFormControl'
+                ]
             },
             default: [
                 {
@@ -80,12 +86,12 @@ export const FormBlockModel: Model = {
             type: 'style',
             name: 'styles',
             styles: {
-                submitLabel: {
+                self: {
                     textAlign: ['left', 'center', 'right']
                 }
             },
             default: {
-                submitLabel: {
+                self: {
                     textAlign: 'left'
                 }
             }

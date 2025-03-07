@@ -71,37 +71,32 @@ export const FeaturedItemModel: Model = {
                     borderStyle: '*',
                     borderColor: [
                         {
-                            value: 'border-primary',
-                            label: 'Primary color',
-                            color: '$primary'
+                            value: 'border-(--theme-light)',
+                            label: 'Light color',
+                            color: '$light'
                         },
                         {
-                            value: 'border-secondary',
-                            label: 'Secondary color',
-                            color: '$secondary'
-                        },
-                        {
-                            value: 'border-dark',
+                            value: 'border-(--theme-dark)',
                             label: 'Dark color',
                             color: '$dark'
                         },
                         {
-                            value: 'border-complementary',
+                            value: 'border-(--theme-primary)',
+                            label: 'Primary color',
+                            color: '$primary'
+                        },
+                        {
+                            value: 'border-(--theme-secondary)',
+                            label: 'Secondary color',
+                            color: '$secondary'
+                        },
+                        {
+                            value: 'border-(--theme-complementary)',
                             label: 'Complementary color',
                             color: '$complementary'
                         }
                     ],
                     textAlign: ['left', 'center', 'right']
-                },
-                title: {
-                    fontWeight: ['400', '500'],
-                    fontStyle: ['italic'],
-                    textDecoration: ['underline']
-                },
-                subtitle: {
-                    fontWeight: ['400', '500'],
-                    fontStyle: ['italic'],
-                    textDecoration: ['underline']
                 }
             },
             default: {

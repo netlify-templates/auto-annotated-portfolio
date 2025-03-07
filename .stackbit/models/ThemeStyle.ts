@@ -17,11 +17,6 @@ export const ThemeStyleModel: Model = {
             name: 'text-styles',
             label: 'Text styles',
             icon: 'text'
-        },
-        {
-            name: 'button-styles',
-            label: 'Button styles',
-            icon: 'palette'
         }
     ],
     fields: [
@@ -92,88 +87,62 @@ export const ThemeStyleModel: Model = {
             group: 'text-styles',
             options: [
                 {
-                    label: 'Font primary',
-                    value: 'fontPrimary'
+                    label: 'DM Mono',
+                    value: '"DM Mono", monospace'
                 },
                 {
-                    label: 'Font secondary',
-                    value: 'fontSecondary'
+                    label: 'Azeret Mono',
+                    value: '"Azeret Mono", monospace'
                 }
             ],
-            default: 'fontPrimary',
+            default: '"DM Mono", monospace',
             required: true
         },
         {
-            type: 'model',
-            name: 'h1',
-            label: 'H1',
-            models: ['ThemeStyleHeading'],
+            type: 'enum',
+            name: 'headingWeight',
+            label: 'Heading font weight',
             group: 'text-styles',
-            readOnly: true
+            controlType: 'button-group',
+            options: [
+                {
+                    label: 'Normal',
+                    value: '400'
+                },
+                {
+                    label: 'Medium',
+                    value: '500'
+                }
+            ],
+            default: '500',
+            required: true
         },
         {
-            type: 'model',
-            name: 'h2',
-            label: 'H2',
-            models: ['ThemeStyleHeading'],
+            type: 'enum',
+            name: 'headingCase',
+            label: 'Heading letter case',
             group: 'text-styles',
-            readOnly: true
-        },
-        {
-            type: 'model',
-            name: 'h3',
-            label: 'H3',
-            models: ['ThemeStyleHeading'],
-            group: 'text-styles',
-            readOnly: true
-        },
-        {
-            type: 'model',
-            name: 'h4',
-            label: 'H4',
-            models: ['ThemeStyleHeading'],
-            group: 'text-styles',
-            readOnly: true
-        },
-        {
-            type: 'model',
-            name: 'h5',
-            label: 'H5',
-            models: ['ThemeStyleHeading'],
-            group: 'text-styles',
-            readOnly: true
-        },
-        {
-            type: 'model',
-            name: 'h6',
-            label: 'H6',
-            models: ['ThemeStyleHeading'],
-            group: 'text-styles',
-            readOnly: true
-        },
-        {
-            type: 'model',
-            name: 'buttonPrimary',
-            label: 'Primary button',
-            models: ['ThemeStyleButton'],
-            group: 'button-styles',
-            readOnly: true
-        },
-        {
-            type: 'model',
-            name: 'buttonSecondary',
-            label: 'Secondary button',
-            models: ['ThemeStyleButton'],
-            group: 'button-styles',
-            readOnly: true
-        },
-        {
-            type: 'model',
-            name: 'link',
-            label: 'Link',
-            models: ['ThemeStyleLink'],
-            group: 'button-styles',
-            readOnly: true
+            controlType: 'button-group',
+            options: [
+                {
+                    label: 'Default',
+                    value: 'none'
+                },
+                {
+                    label: 'ag',
+                    value: 'lowercase'
+                },
+                {
+                    label: 'Ag',
+                    value: 'capitalize'
+                },
+                {
+                    label: 'AG',
+                    value: 'uppercase'
+                }
+            ],
+            default: 'none',
+            required: true
         }
     ]
 };

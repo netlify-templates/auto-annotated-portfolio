@@ -1,4 +1,5 @@
 import { Model } from '@stackbit/types';
+import { colorFields, settingFields, settingFieldsGroup, styleFieldsGroup } from './section-common-fields';
 
 export const QuoteSectionModel: Model = {
     type: 'object',
@@ -7,24 +8,14 @@ export const QuoteSectionModel: Model = {
     labelField: 'name',
     thumbnail: 'https://assets.stackbit.com/components/models/thumbnails/default.png',
     groups: ['SectionModels'],
-    fieldGroups: [
-        {
-            name: 'styles',
-            label: 'Styles',
-            icon: 'palette'
-        },
-        {
-            name: 'settings',
-            label: 'Settings',
-            icon: 'gear'
-        }
-    ],
+    fieldGroups: [...styleFieldsGroup, ...settingFieldsGroup],
     fields: [
         {
-            type: 'markdown',
+            type: 'string',
             name: 'quote',
             label: 'Quote',
-            default: "“We think coding should be required in every school because it's as important as any kind of second language.”",
+            default:
+                "“We think coding should be required in every school because it's as important as any kind of second language.”",
             required: true
         },
         {
@@ -39,67 +30,8 @@ export const QuoteSectionModel: Model = {
             label: 'Author title',
             default: 'Product Marketing Manager at Acme'
         },
-        {
-            type: 'enum',
-            name: 'colors',
-            label: 'Colors',
-            description: 'The color theme of the section',
-            group: 'styles',
-            controlType: 'palette',
-            options: [
-                {
-                    label: 'Colors A',
-                    value: 'colors-a',
-                    textColor: '$onDark',
-                    backgroundColor: '$dark',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors B',
-                    value: 'colors-b',
-                    textColor: '$onLight',
-                    backgroundColor: '$light',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors C',
-                    value: 'colors-c',
-                    textColor: '$onPrimary',
-                    backgroundColor: '$primary',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors D',
-                    value: 'colors-d',
-                    textColor: '$onSecondary',
-                    backgroundColor: '$secondary',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors E',
-                    value: 'colors-e',
-                    textColor: '$onComplementary',
-                    backgroundColor: '$complementary',
-                    borderColor: '#ececec'
-                },
-                {
-                    label: 'Colors F',
-                    value: 'colors-f',
-                    textColor: '$onLight',
-                    backgroundColor: 'transparent',
-                    borderColor: '#ececec'
-                }
-            ],
-            default: 'colors-f'
-        },
-        {
-            type: 'string',
-            name: 'elementId',
-            group: 'settings',
-            label: 'Element ID',
-            description: 'The unique ID for an HTML element, must not contain whitespace',
-            default: ''
-        },
+        ...colorFields,
+        ...settingFields,
         {
             type: 'style',
             name: 'styles',
@@ -109,47 +41,37 @@ export const QuoteSectionModel: Model = {
                     width: ['narrow', 'wide', 'full'],
                     margin: ['tw0:96'],
                     padding: ['tw0:96'],
-                    justifyContent: ['flex-start', 'flex-end', 'center'],
                     borderRadius: '*',
                     borderWidth: ['0:8'],
                     borderStyle: '*',
                     borderColor: [
                         {
-                            value: 'border-primary',
-                            label: 'Primary color',
-                            color: '$primary'
+                            value: 'border-(--theme-light)',
+                            label: 'Light color',
+                            color: '$light'
                         },
                         {
-                            value: 'border-secondary',
-                            label: 'Secondary color',
-                            color: '$secondary'
-                        },
-                        {
-                            value: 'border-dark',
+                            value: 'border-(--theme-dark)',
                             label: 'Dark color',
                             color: '$dark'
                         },
                         {
-                            value: 'border-complementary',
+                            value: 'border-(--theme-primary)',
+                            label: 'Primary color',
+                            color: '$primary'
+                        },
+                        {
+                            value: 'border-(--theme-secondary)',
+                            label: 'Secondary color',
+                            color: '$secondary'
+                        },
+                        {
+                            value: 'border-(--theme-complementary)',
                             label: 'Complementary color',
                             color: '$complementary'
                         }
-                    ]
-                },
-                quote: {
+                    ],
                     textAlign: ['left', 'center', 'right']
-                },
-                name: {
-                    fontWeight: ['400', '500'],
-                    fontStyle: ['italic'],
-                    textAlign: ['left', 'center', 'right'],
-                    textDecoration: ['underline']
-                },
-                title: {
-                    fontWeight: ['400', '500'],
-                    fontStyle: ['italic'],
-                    textAlign: ['left', 'center', 'right'],
-                    textDecoration: ['underline']
                 }
             },
             default: {
@@ -158,21 +80,10 @@ export const QuoteSectionModel: Model = {
                     width: 'wide',
                     margin: ['mt-0', 'mb-0', 'ml-0', 'mr-0'],
                     padding: ['pt-12', 'pb-12', 'pl-4', 'pr-4'],
-                    justifyContent: 'center',
                     borderRadius: 'none',
                     borderWidth: 0,
                     borderStyle: 'none',
-                    borderColor: 'border-dark'
-                },
-                quote: {
-                    textAlign: 'center'
-                },
-                name: {
-                    fontWeight: 400,
-                    textAlign: 'center'
-                },
-                title: {
-                    fontWeight: 400,
+                    borderColor: 'border-(--theme-dark)',
                     textAlign: 'center'
                 }
             }

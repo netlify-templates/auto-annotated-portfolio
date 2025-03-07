@@ -1,21 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+    --font-body: var(--theme-font-body, monospace);
+    --background-color-main: var(--theme-dark);
+    --background-color-inverse: var(--theme-on-dark);
+    --text-color-main: var(--theme-on-dark);
+    --text-color-inverse: var(--theme-dark);
+    --container-8xl: 96rem;
+    --spacing-icon: 1em;
+}
 
 @layer base {
-    body {
-        @apply flex flex-col min-h-screen antialiased;
+    html {
+        @apply antialiased font-body;
     }
-    body > div,
-    .sb-page,
-    .sb-base {
+    body {
+        @apply flex flex-col min-h-screen;
+    }
+    body > div {
         @apply flex flex-col grow;
     }
-    .sb-layout {
-        @apply grow;
-    }
+
     h1,
     h2,
     h3,
@@ -24,350 +33,129 @@
     h6 {
         @apply break-words;
         line-height: 1.15;
-    }
-}
-
-@layer components {
-    .sb-markdown {
-        @apply text-lg leading-relaxed;
-        a {
-            @apply underline;
-        }
-        a:hover {
-            @apply no-underline;
-        }
-        b,
-        strong {
-            @apply font-medium;
-        }
-        em {
-            @apply italic;
-        }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin: 2.5rem 0 1.5rem;
-        }
-        p {
-            margin: 1.5rem 0;
-        }
-        ol {
-            @apply list-decimal;
-            margin: 1.5rem 0;
-            padding-left: 1.25em;
-        }
-        ul {
-            @apply list-disc;
-            margin: 1.5rem 0;
-            padding-left: 1.25em;
-        }
-        li > ul,
-        li > ol {
-            margin: 0;
-        }
-        blockquote {
-            @apply border-l-4 border-current;
-            font-size: 1.25em;
-            line-height: 1.4;
-            margin: 2.5rem 0;
-            padding-left: 1.25em;
-        }
-        pre {
-            @apply overflow-x-auto leading-normal border border-current;
-            font-size: 0.875em;
-            margin: 1.5rem 0;
-            padding: 1.25em;
-        }
-        hr {
-            @apply h-px bg-current border-0;
-            margin: 2.5rem 0;
-        }
-        figure {
-            margin: 1.5rem 0;
-        }
-        figcaption {
-            @apply leading-normal;
-            font-size: 0.875em;
-            margin: 0.5rem 0 0;
-        }
-        table {
-            @apply w-full text-left border border-collapse border-current;
-            margin: 1.5rem 0;
-        }
-        caption {
-            @apply text-left;
-            font-size: 0.875em;
-            margin: 0 0 0.5rem;
-        }
-        th,
-        td {
-            @apply border-b border-r border-current;
-            padding: 0.5em;
-        }
-        th {
-            font-weight: medium;
-        }
-        h1:first-child,
-        h2:first-child,
-        h3:first-child,
-        h4:first-child,
-        h5:first-child,
-        h6:first-child,
-        p:first-child,
-        ul:first-child,
-        ol:first-child,
-        blockquote:first-child,
-        pre:first-child,
-        hr:first-child,
-        figure:first-child,
-        table:first-child {
-            margin-top: 0;
-        }
-        h1 + h2,
-        h2 + h3,
-        h3 + h4,
-        h4 + h5,
-        h5 + h6 {
-            margin-top: 1.5rem;
-        }
+        font-weight: var(--theme-heading-weight);
+        text-transform: var(--theme-heading-case);
     }
 
-    /* Buttons */
-    .sb-component-button {
-        @apply relative inline-flex items-center justify-center text-lg text-center no-underline transition duration-200 ease-in border-2 border-current;
-        box-shadow: none;
-    }
-    .sb-component-button:not(.sb-component-button-no-hover):hover,
-    .group:hover .sb-component-button:not(.sb-component-button-no-hover) {
-        box-shadow: 0 6px 0 0 currentColor;
-        transform: translate(0, -6px);
-    }
-    .sb-component-button-secondary {
-        @apply rounded-full;
+    b,
+    strong {
+        @apply font-medium;
     }
 
-    /* Links */
-    .sb-component-link {
-        @apply relative inline-flex items-center justify-center text-lg no-underline;
-    }
-    .sb-component-link:not(.sb-component-link-fill) {
-        box-shadow: 0 1px 0 0 currentColor;
-        transition: box-shadow 0.25s ease-in-out;
-    }
-    .sb-component-link:not(.sb-component-link-fill):hover,
-    .group:hover .sb-component-link:not(.sb-component-link-fill) {
-        box-shadow: 0 5px 0 0 currentColor;
-    }
-
-    /* Socials */
-    .sb-component-social {
-        @apply relative inline-flex items-center justify-center text-lg no-underline;
-    }
-    .sb-component-social:not(.sb-component-social-fill) {
-        @apply opacity-100 hover:opacity-80;
-        transition: opacity 0.25s ease-in-out;
-    }
-
-    /* Header links hover */
-    .sb-component-link-fill,
-    .sb-component-social-fill,
-    .sb-header-logo {
-        @apply relative overflow-hidden;
-        transition: color 0.25s ease-in-out;
-        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-        z-index: 1;
-    }
-    .sb-component-link-fill:before,
-    .sb-component-social-fill:before,
-    .sb-header-logo:before {
-        @apply absolute top-0 left-0 h-full opacity-0;
-        content: '';
-        z-index: -1;
-        transform: translate3d(0, -100%, 0);
-        transform-origin: 0% 100%;
-        transition: transform 0.25s, opacity 0.25s;
-        width: 101%;
-    }
-    .sb-component-link-fill:hover:before,
-    .sb-component-social-fill:hover:before,
-    .sb-header-logo:hover:before {
-        @apply opacity-100;
-        transform: translate3d(0, 0, 0);
-        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    }
-
-    /* Form controls */
-    .sb-component-form-block :not(data) .sb-form-control-full,
-    data:has(.sb-form-control-full) {
-        @apply sm:col-span-2;
-    }
-    .sb-form-control {
-        @apply mb-6;
-    }
-    .sb-label {
-        @apply inline-block mb-1 sm:text-xl;
-    }
-    .sb-input,
-    .sb-select,
-    .sb-textarea {
-        @apply w-full p-3 bg-transparent border border-current focus:outline-none sm:text-xl;
+    select {
+        @apply bg-no-repeat appearance-none cursor-pointer;
+        background-image:
+            linear-gradient(45deg, transparent 50%, currentColor 0),
+            linear-gradient(135deg, currentColor 50%, transparent 0);
+        background-position:
+            calc(100% - 18px) calc(1px + 50%),
+            calc(100% - 12px) calc(1px + 50%);
+        background-size:
+            6px 6px,
+            6px 6px;
     }
     option {
         color: initial;
     }
-    .sb-checkbox {
-        @apply absolute opacity-0 appearance-none select-none;
-        height: 1.5em;
-        width: 1.5em;
+
+    /* Color themes */
+    :where([data-theme='colors-b']) {
+        --background-color-main: var(--theme-light);
+        --background-color-inverse: var(--theme-on-light);
+        --text-color-main: var(--theme-on-light);
+        --text-color-inverse: var(--theme-light);
     }
-    .sb-checkbox + .sb-label {
-        @apply relative cursor-pointer sm:text-xl;
-        padding-left: 2.5em;
+    :where([data-theme='colors-c']) {
+        --background-color-main: var(--theme-primary);
+        --background-color-inverse: var(--theme-on-primary);
+        --text-color-main: var(--theme-on-primary);
+        --text-color-inverse: var(--theme-primary);
     }
-    .sb-checkbox + .sb-label:before {
-        @apply absolute left-0 font-sans text-center -translate-y-1/2 border border-current cursor-pointer top-1/2;
-        content: '';
-        height: 1.5em;
-        width: 1.5em;
-        line-height: 1.25;
+    :where([data-theme='colors-d']) {
+        --background-color-main: var(--theme-secondary);
+        --background-color-inverse: var(--theme-on-secondary);
+        --text-color-main: var(--theme-on-secondary);
+        --text-color-inverse: var(--theme-secondary);
     }
-    .sb-checkbox:checked + .sb-label:before {
-        content: '\2713';
+    :where([data-theme='colors-e']) {
+        --background-color-main: var(--theme-complementary);
+        --background-color-inverse: var(--theme-on-complementary);
+        --text-color-main: var(--theme-on-complementary);
+        --text-color-inverse: var(--theme-complementary);
     }
-    .sb-select {
-        @apply bg-no-repeat appearance-none cursor-pointer pr-7;
-        background-image: linear-gradient(45deg, transparent 50%, currentColor 0), linear-gradient(135deg, currentColor 50%, transparent 0);
-        background-position: calc(100% - 18px) calc(1px + 50%), calc(100% - 12px) calc(1px + 50%);
-        background-size: 6px 6px, 6px 6px;
-        background-repeat: no-repeat;
+    :where([data-theme^='colors-']):not([data-theme='colors-f']) {
+        @apply bg-main text-main;
     }
 
-    .text-center + .sb-contact-section-form,
-    .sb-contact-section-form:only-child {
-        text-align: center;
+    /* Fixing issues caused by data wrapper added via auto annotations */
+    form data:has([class*='sm:col-span-2']) {
+        @apply sm:col-span-2;
     }
+    nav data:has([class*='sm:col-start-2']) {
+        @apply sm:col-start-2;
+    }
+    li data:has([class*='link-fill']) {
+        @apply inline-flex;
+    }
+}
 
-    /* Post, project "read more" button */
-    .sb-project-feed-item.group:hover .sb-component-button-icon,
-    .sb-post-feed-item.group:hover .sb-component-button-icon {
-        transform: translate(6px, -6px);
-    }
+@layer utilities {
+    .prose {
+        --tw-prose-body: var(--text-color-main);
+        --tw-prose-headings: var(--text-color-main);
+        --tw-prose-lead: var(--text-color-main);
+        --tw-prose-links: var(--text-color-main);
+        --tw-prose-bold: var(--text-color-main);
+        --tw-prose-counters: var(--text-color-main);
+        --tw-prose-bullets: var(--text-color-main);
+        --tw-prose-hr: var(--text-color-main);
+        --tw-prose-quotes: var(--text-color-main);
+        --tw-prose-quote-borders: var(--text-color-main);
+        --tw-prose-captions: var(--text-color-main);
+        --tw-prose-kbd: var(--text-color-main);
+        --tw-prose-kbd-shadows: from var(--text-color-main) r g b;
+        --tw-prose-code: var(--text-color-main);
+        --tw-prose-pre-code: var(--text-color-inverse);
+        --tw-prose-pre-bg: var(--background-color-inverse);
+        --tw-prose-th-borders: var(--text-color-main);
+        --tw-prose-td-borders: var(--text-color-main);
 
-    /* Project navigation */
-    .sb-project-nav-item:not(:first-child) {
-        @apply md:text-right;
-    }
+        a {
+            @apply underline font-normal;
+        }
 
-    /* Color palettes */
-    .colors-a {
-        @apply bg-dark text-on-dark;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply placeholder-opacity-75 text-on-dark placeholder-on-dark;
+        a:hover {
+            @apply no-underline;
         }
-        .sb-component-link-fill:before,
-        .sb-component-social-fill:before,
-        .sb-header-logo:before {
-            @apply bg-on-dark;
+
+        :where(h1, h2, h3, h4, h5, h6) {
+            font-weight: var(--theme-heading-weight);
+            line-height: 1.15;
         }
-        .sb-component-link-fill:hover,
-        .sb-component-social-fill:hover,
-        .sb-header-logo:hover {
-            @apply text-dark;
-        }
-        .sb-header-overlay {
-            @apply bg-dark;
+
+        blockquote p:first-of-type::before,
+        blockquote p:last-of-type::after {
+            content: none;
         }
     }
-    .colors-b {
-        @apply bg-light text-on-light;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply placeholder-opacity-75 text-on-light placeholder-on-light;
-        }
-        .sb-component-link-fill:before,
-        .sb-component-social-fill:before,
-        .sb-header-logo:before {
-            @apply bg-on-light;
-        }
-        .sb-component-link-fill:hover,
-        .sb-component-social-fill:hover,
-        .sb-header-logo:hover {
-            @apply text-light;
-        }
-        .sb-header-overlay {
-            @apply bg-light;
-        }
-    }
-    .colors-c {
-        @apply bg-primary text-on-primary;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply placeholder-opacity-75 text-on-primary placeholder-on-primary;
-        }
-        .sb-component-link-fill:before,
-        .sb-component-social-fill:before,
-        .sb-header-logo:before {
-            @apply bg-on-primary;
-        }
-        .sb-component-link-fill:hover,
-        .sb-component-social-fill:hover,
-        .sb-header-logo:hover {
-            @apply text-primary;
-        }
-        .sb-header-overlay {
-            @apply bg-primary;
-        }
-    }
-    .colors-d {
-        @apply bg-secondary text-on-secondary;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply placeholder-opacity-75 text-on-secondary placeholder-on-secondary;
-        }
-        .sb-component-link-fill:before,
-        .sb-component-social-fill:before,
-        .sb-header-logo:before {
-            @apply bg-on-secondary;
-        }
-        .sb-component-link-fill:hover,
-        .sb-component-social-fill:hover,
-        .sb-header-logo:hover {
-            @apply text-secondary;
-        }
-        .sb-header-overlay {
-            @apply bg-secondary;
-        }
-    }
-    .colors-e {
-        @apply bg-complementary text-on-complementary;
-        .sb-input,
-        .sb-select,
-        .sb-textarea {
-            @apply placeholder-opacity-75 text-on-complementary placeholder-on-complementary;
-        }
-        .sb-component-link-fill:before,
-        .sb-component-social-fill:before,
-        .sb-header-logo:before {
-            @apply bg-on-complementary;
-        }
-        .sb-component-link-fill:hover,
-        .sb-component-social-fill:hover,
-        .sb-header-logo:hover {
-            @apply text-complementary;
-        }
-        .sb-header-overlay {
-            @apply bg-complementary;
-        }
-    }
-    .colors-f {
-        @apply bg-transparent;
+}
+
+@utility bottom-shadow-* {
+    box-shadow: 0 calc(--value(integer) * 1px) 0 0 currentColor;
+}
+
+@utility link-fill {
+    @apply transition-all text-main;
+    background-image: linear-gradient(
+        to bottom,
+        var(--background-color-inverse) 0%,
+        var(--background-color-inverse) 100%
+    );
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+
+    &:hover {
+        @apply text-inverse;
+        background-size: 100% 100%;
     }
 }
