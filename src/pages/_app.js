@@ -21,7 +21,6 @@ export default function MyApp({ Component, pageProps }) {
                     ${cssVars}
                 }
             `}</style>
-            {/* Only render the component after client-side hydration is complete */}
             {isMounted ? <Component {...pageProps} /> : null}
         </>
     );
