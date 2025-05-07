@@ -1,11 +1,12 @@
 import * as fs from 'fs';
 import path from 'path';
-import glob from 'glob';
-import frontmatter from 'front-matter';
+//import glob from 'glob';
 import { allModels } from '.stackbit/models';
 import * as types from '@/types';
-import { isDev } from './common';
 import { PAGE_MODEL_NAMES, PageModelType } from '@/types/generated';
+import frontmatter from 'front-matter';
+import * as glob from 'glob';
+import { isDev } from './common';
 
 const contentBaseDir = 'content';
 const pagesBaseDir = contentBaseDir + '/pages';
