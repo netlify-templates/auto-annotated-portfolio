@@ -14,12 +14,9 @@ sections:
     colors: colors-f
     backgroundSize: full
     title: >-
-      I’m a developer, digital artist, consultant and a bunch of other
-      impressive titles and buzz words.
+      机械工程留学直通车
     subtitle: >-
-      This is my info—I’m sharing it all this with ya’ll to impress you with all
-      the hard work I’ve done in the past few years. Once you’re impressed, you
-      can continue to scroll down to see more details and credentials about me.
+      世界TOP50机械工程博士，专注机械工程/力学类本硕博课程1v1辅导：课程作业、论文写作、选课建议，开启直通车式解决方案，妈妈再也不用担心我的学习。
     styles:
       self:
         height: auto
@@ -95,7 +92,7 @@ sections:
   - type: ContactSection
     colors: colors-f
     backgroundSize: full
-    title: "Got an interesting project? Tell me more...\U0001F4AC"
+    title: 想要辅导？请在留言处留下您的联系方式（严格保密）， 秘书会尽快联系您。
     form:
       type: FormBlock
       elementId: sign-up-form
