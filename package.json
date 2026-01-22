@@ -22,7 +22,7 @@
         "@stackbit/cms-git": "^1.0.30",
         "@stackbit/types": "^2.1.11",
         "@tailwindcss/typography": "^0.5.16",
-        "@types/glob": "^8.1.0",
+        "@types/glob": "^9.0.0",
         "@types/react": "^19.0.1",
         "@types/react-syntax-highlighter": "^15.5.13",
         "eslint": "^9.21.0",
