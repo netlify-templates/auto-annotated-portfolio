@@ -26,6 +26,12 @@ export const VideoBlockModel: Model = {
             default: 'https://youtu.be/BD-YliszGkA'
         },
         {
+            type: 'image',
+            name: 'coverImage',
+            label: 'Cover Image',
+            description: 'Optional custom thumbnail/poster image to display before the video plays'
+        },
+        {
             type: 'string',
             name: 'elementId',
             label: 'Element ID',
