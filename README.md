@@ -1,51 +1,50 @@
-# Enhanced Portfolio Site
+# Cinematographer Portfolio
 
 ![Developer Portfolio](https://assets.stackbit.com/docs/personal-nextjs-starter-thumb.png)
 
-This is an **enhanced version** of the [Netlify Developer Portfolio Starter](https://github.com/netlify-templates/auto-annotated-portfolio), built with Next.js, Tailwind CSS, and [Stackbit Visual Editor](https://docs.netlify.com/visual-editor/overview/).
+We absolutely **love** the [Netlify Developer Portfolio Starter](https://github.com/netlify-templates/auto-annotated-portfolio) and the visual editing workflow! This repo is our version with some tweaks to make it perfect for a cinematographer's portfolio.
 
-## 🎯 What Makes This Different
+After years on Squarespace, we're **so excited** to finally have a portfolio site that's:
+- Fast and modern
+- Easy to update without touching code
+- Flexible enough to showcase video work properly
+- Git-based (no more proprietary CMS lock-in!)
 
-This fork includes significant enhancements beyond the original template:
+## 🎬 What We Added
 
-### 🎥 Advanced Video Support
-- **Custom Cover Thumbnails**: Add custom thumbnail images for YouTube, Vimeo, and self-hosted videos
-- **Click-to-Play Interface**: Professional play button overlay with hover effects
-- **Gallery Integration**: Videos work seamlessly in media galleries alongside images
-- **Auto-Featured Images**: Video cover images automatically become project featured images when no image is set
+Here are the customizations we made to fit our needs:
 
-### 🖼️ Enhanced Image Features
-- **Overlay Text**: Add customizable text directly on images with full control over:
-  - Position (top, center, bottom)
-  - Size (small, medium, large, extra large)
-  - Weight (normal, medium, bold)
-  - Alignment (left, center, right)
-  - Colors (text and background with transparency support)
-- **Clickable Images**: Turn any image into a link with optional "open in new tab" setting
-- **Standardized Dimensions**: Consistent aspect ratios across all media types (1:1, 2:3, 3:2, 3:4, 4:3, 16:9)
+### 🎥 Better Video Support
+Cinematographers work with video, so we needed this to be first-class:
+- Custom cover thumbnails for all video types (YouTube, Vimeo, self-hosted)
+- Nice click-to-play interface with a play button overlay
+- Videos work in galleries alongside images
+- If a project only has video, its cover image automatically becomes the featured thumbnail
 
-### 📧 Netlify Forms Integration
-- Fully functional contact forms with **email notifications**
-- Built-in spam protection with honeypot fields
-- Success/error states and loading indicators
-- 100 free submissions per month on Netlify's free plan
+### 🖼️ Image Customization
+Sometimes you want text on images without opening Photoshop:
+- Add text overlays directly on images
+- Control position, size, weight, alignment, and colors
+- Make images clickable (link to full projects, external sites, etc.)
+- All media uses consistent aspect ratios so everything looks aligned
 
-### 🎨 Improved Gallery & Layout
-- **Flexible Column Layouts**: 1-7 columns (original supported 2-7)
-- Enhanced responsive behavior across all screen sizes
-- Fixed hover effects and proper aspect ratio enforcement
-- Support for both images and videos in galleries
+### 📧 Contact Forms That Actually Work
+We hooked up Netlify Forms so inquiries actually reach us:
+- Email notifications when someone fills out the contact form
+- Built-in spam protection
+- Shows success/error messages
+- 100 free submissions/month on Netlify's free plan
 
-### 📅 Cleaner UI
-- Removed date displays from frontend for a cleaner look
-- Dates still editable in Stackbit admin for organization
-- Hidden Netlify branding badge
+### 🎨 Gallery Improvements
+- Flexible 1-7 column layouts (original only did 2-7)
+- Better responsive behavior on mobile
+- Videos and images work together in galleries
+- Fixed some hover effect quirks
 
-### 🛠️ Technical Improvements
-- Extended VideoBlock aspect ratio support
-- Improved overlay positioning and rendering
-- Better component organization and reusability
-- Enhanced form handling with proper state management
+### 📅 Cleaner Look
+- Removed dates from the frontend (looked too blog-y for a portfolio)
+- Dates still saved in the admin for organization
+- Hidden the Netlify badge in the corner
 
 ---
 
