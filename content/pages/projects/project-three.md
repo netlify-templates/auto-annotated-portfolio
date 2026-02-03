@@ -1,6 +1,7 @@
 ---
 type: ProjectLayout
 title: One more cool project
+slug: project-three
 colors: colors-a
 date: '2022-01-22'
 client: Awesome client

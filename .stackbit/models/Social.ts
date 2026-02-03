@@ -69,6 +69,10 @@ export const SocialModel: Model = {
                     value: 'reddit'
                 },
                 {
+                    label: 'Tumblr',
+                    value: 'tumblr'
+                },
+                {
                     label: 'X (Twitter)',
                     value: 'twitter'
                 },

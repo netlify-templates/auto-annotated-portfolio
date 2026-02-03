@@ -19,6 +19,13 @@ export const PageLayoutModel: Model = {
             required: true
         },
         {
+            type: 'slug',
+            name: 'slug',
+            label: 'Slug',
+            description: 'The URL-friendly version of the page title. This will be used in the page URL.',
+            required: true
+        },
+        {
             type: 'list',
             name: 'sections',
             label: 'Sections',

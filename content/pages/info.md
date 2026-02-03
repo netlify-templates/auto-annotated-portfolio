@@ -1,6 +1,7 @@
 ---
 type: PageLayout
 title: About
+slug: info
 colors: colors-a
 backgroundImage:
   type: BackgroundImage

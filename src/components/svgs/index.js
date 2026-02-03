@@ -19,6 +19,7 @@ import Play from './play';
 import PlayCircle from './play-circle';
 import Reddit from './reddit';
 import Send from './send';
+import Tumblr from './tumblr';
 import Twitter from './twitter';
 import Vimeo from './vimeo';
 import YouTube from './youtube';
@@ -45,6 +46,7 @@ export const iconMap = {
     playCircle: PlayCircle,
     reddit: Reddit,
     send: Send,
+    tumblr: Tumblr,
     twitter: Twitter,
     vimeo: Vimeo,
     youtube: YouTube

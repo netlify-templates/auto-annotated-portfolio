@@ -1,6 +1,7 @@
 ---
 type: PostLayout
 title: How to Structure and Organize a Next.js Project 🗂️
+slug: post-six
 colors: colors-a
 date: '2024-06-03'
 author: content/data/team/doris-soto.json

@@ -18,6 +18,13 @@ export const PostLayoutModel: Model = {
             required: true
         },
         {
+            type: 'slug',
+            name: 'slug',
+            label: 'Slug',
+            description: 'The URL-friendly version of the post title. This will be used in the post URL.',
+            required: true
+        },
+        {
             type: 'date',
             name: 'date',
             label: 'Date',

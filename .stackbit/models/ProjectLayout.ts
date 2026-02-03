@@ -18,6 +18,13 @@ export const ProjectLayoutModel: Model = {
             required: true
         },
         {
+            type: 'slug',
+            name: 'slug',
+            label: 'Slug',
+            description: 'The URL-friendly version of the project title. This will be used in the project URL.',
+            required: true
+        },
+        {
             type: 'date',
             name: 'date',
             label: 'Date',
