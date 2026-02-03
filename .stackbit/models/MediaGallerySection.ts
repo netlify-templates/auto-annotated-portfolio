@@ -25,10 +25,10 @@ export const MediaGallerySectionModel: Model = {
         {
             type: 'list',
             name: 'images',
-            label: 'Images',
+            label: 'Media',
             items: {
                 type: 'model',
-                models: ['ImageBlock']
+                models: ['ImageBlock', 'VideoBlock']
             },
             default: [
                 {

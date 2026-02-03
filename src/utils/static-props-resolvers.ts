@@ -63,8 +63,21 @@ const PropsResolvers: Partial<Record<ContentObjectType, ResolverFunction>> = {
         const currentProjectIndex = allProjects.findIndex((project) => project.__metadata?.id === currentProjectId);
         const nextProject = currentProjectIndex > 0 ? allProjects[currentProjectIndex - 1] : null;
         const prevProject = currentProjectIndex < allProjects.length - 1 ? allProjects[currentProjectIndex + 1] : null;
+        
+        // If no featured image but has video media with cover image, use that
+        const projectProps = props as ProjectLayout;
+        let featuredImage = projectProps.featuredImage;
+        if (!featuredImage && projectProps.media?.type === 'VideoBlock' && (projectProps.media as any).coverImage) {
+            featuredImage = {
+                type: 'ImageBlock',
+                url: (projectProps.media as any).coverImage,
+                altText: projectProps.title || 'Project thumbnail'
+            };
+        }
+        
         return {
             ...props,
+            featuredImage,
             prevProject,
             nextProject
         };
@@ -99,5 +112,20 @@ function getAllProjectsSorted(objects: ContentObject[]) {
     const sorted = all.sort(
         (projectA, projectB) => new Date(projectB.date).getTime() - new Date(projectA.date).getTime()
     );
-    return sorted;
+    
+    // Apply featured image fallback for projects with video media
+    return sorted.map(project => {
+        let featuredImage = project.featuredImage;
+        if (!featuredImage && project.media?.type === 'VideoBlock' && (project.media as any).coverImage) {
+            featuredImage = {
+                type: 'ImageBlock',
+                url: (project.media as any).coverImage,
+                altText: project.title || 'Project thumbnail'
+            } as any;
+        }
+        return {
+            ...project,
+            featuredImage
+        };
+    });
 }

@@ -39,33 +39,83 @@ sections:
         textAlign: left
     type: HeroSection
     actions: []
-  - colors: colors-f
-    type: FeaturedProjectsSection
+  - type: MediaGallerySection
+    title: ''
+    subtitle: ''
+    images:
+      - type: ImageBlock
+        url: /images/gallery-1.jpg
+        altText: Image one
+        caption: Image one caption
+        elementId: ''
+        overlayText: documentary
+      - type: ImageBlock
+        url: /images/gallery-3.jpg
+        altText: Image three
+        caption: Image three caption
+        elementId: ''
+        overlayText: testing cetner
+      - type: ImageBlock
+        url: >-
+          https://assets.stackbit.com/components/images/default/default-image.png
+        altText: altText of the image
+        caption: Caption of the image
+        linkInNewTab: false
+        overlayTextAlign: center
+        overlayTextSize: medium
+        overlayTextWeight: medium
+        overlayTextColor: '#ffffff'
+        overlayBackgroundColor: rgba(0, 0, 0, 0.5)
+        overlayPosition: center
+        elementId: ''
+      - type: ImageBlock
+        url: /images/gallery-4.jpg
+        altText: Image four
+        caption: Image four caption
+        elementId: ''
+      - type: ImageBlock
+        url: >-
+          https://assets.stackbit.com/components/images/default/default-image.png
+        altText: altText of the image
+        caption: Caption of the image
+        linkInNewTab: false
+        overlayTextAlign: center
+        overlayTextSize: medium
+        overlayTextWeight: medium
+        overlayTextColor: '#ffffff'
+        overlayBackgroundColor: rgba(0, 0, 0, 0.5)
+        overlayPosition: center
+        elementId: ''
+      - type: ImageBlock
+        url: >-
+          https://assets.stackbit.com/components/images/default/default-image.png
+        altText: altText of the image
+        caption: Caption of the image
+        linkInNewTab: false
+        overlayTextAlign: center
+        overlayTextSize: medium
+        overlayTextWeight: medium
+        overlayTextColor: '#ffffff'
+        overlayBackgroundColor: rgba(0, 0, 0, 0.5)
+        overlayPosition: center
+        elementId: ''
+    colors: colors-f
+    spacing: 16
+    columns: 4
+    aspectRatio: '4:3'
+    showCaption: false
+    enableHover: true
     elementId: ''
-    actions:
-      - type: Link
-        label: See all projects
-        url: /projects
-    showDate: false
-    showDescription: true
-    showFeaturedImage: true
-    showReadMoreLink: true
-    variant: variant-b
-    projects:
-      - content/pages/projects/project-two.md
-      - content/pages/projects/project-three.md
-      - content/pages/projects/project-one.md
     styles:
       self:
         height: auto
-        width: wide
+        width: full
         padding:
-          - pt-24
-          - pb-24
+          - pt-12
+          - pb-12
           - pl-4
           - pr-4
-        textAlign: left
-    subtitle: Projects
+        textAlign: center
   - type: FeaturedPostsSection
     elementId: ''
     colors: colors-f
@@ -96,7 +146,7 @@ sections:
   - type: ContactSection
     colors: colors-f
     backgroundSize: full
-    title: "Got an interesting project? Tell me more...\U0001F4AC"
+    title: Got an interesting project? Tell me more...💬
     form:
       type: FormBlock
       elementId: sign-up-form
@@ -134,7 +184,7 @@ sections:
           isRequired: false
           width: full
           type: CheckboxFormControl
-      submitLabel: "Submit \U0001F680"
+      submitLabel: Submit 🚀
       styles:
         self:
           textAlign: center
