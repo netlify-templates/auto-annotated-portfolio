@@ -97,6 +97,21 @@ layer(base);
     li data:has([class*='link-fill']) {
         @apply inline-flex;
     }
+
+    /* Hide Netlify badge */
+    .netlify-badge,
+    a[href*='netlify.com'][rel='noopener'],
+    a[href*='netlify.com'][rel='noopener'] img,
+    div[style*='position: fixed'][style*='bottom'][style*='left'],
+    div[style*='position:fixed'][style*='bottom'][style*='left'],
+    iframe[src*='netlify'],
+    [class*='netlify-badge'],
+    [id*='netlify-badge'] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
 }
 
 @layer utilities {

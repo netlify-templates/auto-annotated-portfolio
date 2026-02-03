@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import dayjs from 'dayjs';
 
 import { Action, Link } from '@/components/atoms';
 import ImageBlock from '@/components/molecules/ImageBlock';
@@ -85,11 +84,6 @@ function ProjectGrid(props) {
                             />
                         </div>
                     )}
-                    {showDate && project.date && (
-                        <div className="mb-3">
-                            <ProjectDate date={project.date} />
-                        </div>
-                    )}
                     <TitleTag className="text-3xl sm:text-4xl">{project.title}</TitleTag>
                     {showDescription && project.description && <p className="mt-5 text-lg">{project.description}</p>}
                     {showReadMoreLink && (
@@ -139,11 +133,6 @@ function ProjectList(props) {
                             </div>
                         )}
                         <div className="md:grow">
-                            {showDate && project.date && (
-                                <div className="mb-3">
-                                    <ProjectDate date={project.date} />
-                                </div>
-                            )}
                             <TitleTag className="text-3xl sm:text-4xl">{project.title}</TitleTag>
                             {showDescription && project.description && (
                                 <p className="mt-5 text-lg">{project.description}</p>
@@ -161,10 +150,4 @@ function ProjectList(props) {
             ))}
         </div>
     );
-}
-
-function ProjectDate({ date }) {
-    const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
-    const formattedDate = dayjs(date).format('YYYY-MM-DD');
-    return <time dateTime={dateTimeAttr}>{formattedDate}</time>;
 }

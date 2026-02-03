@@ -168,20 +168,12 @@ function PostList(props) {
 }
 
 function PostAttribution({ showDate, showAuthor, date, author, className = '' }) {
-    if (!showDate && !(showAuthor && author)) {
+    if (!(showAuthor && author)) {
         return null;
     }
     return (
         <div className={className}>
-            {showDate && (
-                <time dateTime={dayjs(date).format('YYYY-MM-DD HH:mm:ss')}>{dayjs(date).format('YYYY-MM-DD')}</time>
-            )}
-            {showAuthor && author && (
-                <>
-                    {showDate && ' | '}
-                    {author.firstName} {author.lastName}
-                </>
-            )}
+            {author.firstName} {author.lastName}
         </div>
     );
 }

@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 
-import ImageBlock from '@/components/molecules/ImageBlock';
-import type { ImageBlock as ImageBlockProps, MediaGallerySection as MediaGallerySectionProps } from '@/types';
+import { DynamicComponent } from '@/components/components-registry';
+import type { MediaGallerySection as MediaGallerySectionProps } from '@/types';
 import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 import Section from '../Section';
 
 type MediaGalleryItemProps = {
-    image: ImageBlockProps;
+    media: any;
     showCaption: boolean;
     enableHover: boolean;
     aspectRatio: string;
@@ -50,10 +50,10 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
                         gap: spacing ? `${spacing}px` : undefined
                     }}
                 >
-                    {images.map((image, index) => (
+                    {images.map((media, index) => (
                         <MediaGalleryImage
                             key={index}
-                            image={image}
+                            media={media}
                             showCaption={showCaption}
                             enableHover={enableHover}
                             aspectRatio={aspectRatio}
@@ -66,21 +66,29 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
 }
 
 function MediaGalleryImage(props: MediaGalleryItemProps) {
-    const { image, showCaption, enableHover, aspectRatio } = props;
-    if (!image) {
+    const { media, showCaption, enableHover, aspectRatio } = props;
+    if (!media) {
         return null;
     }
+    
+    const isVideo = media.type === 'VideoBlock';
+    const caption = media.caption || (isVideo && media.title);
+    
     return (
-        <figure className={classNames('overflow-hidden', 'relative', 'w-full', mapAspectRatioStyles(aspectRatio))}>
-            <ImageBlock
-                {...image}
-                className={classNames('w-full h-full object-cover', {
-                    'transition-transform hover:scale-105': enableHover
-                })}
-            />
-            {showCaption && image.caption && (
-                <figcaption className="absolute bg-inverse/70 text-inverse left-0 mx-2 bottom-2 p-1.5 text-xs pointer-events-none">
-                    {image.caption}
+        <figure className={classNames('overflow-hidden relative w-full', mapAspectRatioStyles(aspectRatio))}>
+            <div className="absolute inset-0">
+                <DynamicComponent
+                    {...media}
+                    aspectRatio={aspectRatio}
+                    className={classNames('w-full h-full', {
+                        'object-cover': !isVideo,
+                        'transition-transform duration-500 hover:scale-105': enableHover && !isVideo
+                    })}
+                />
+            </div>
+            {showCaption && caption && (
+                <figcaption className="absolute bg-inverse/70 text-inverse left-0 mx-2 bottom-2 p-1.5 text-xs pointer-events-none z-10">
+                    {caption}
                 </figcaption>
             )}
         </figure>
@@ -108,19 +116,21 @@ function mapAspectRatioStyles(aspectRatio) {
 
 function mapColStyles(columns) {
     switch (columns) {
+        case 1:
+            return 'grid-cols-1';
         case 2:
-            return 'grid-cols-2';
+            return 'grid-cols-1 sm:grid-cols-2';
         case 3:
-            return 'grid-cols-2 sm:grid-cols-3';
+            return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3';
         case 4:
-            return 'grid-cols-2 sm:grid-cols-4';
+            return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-4';
         case 5:
-            return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-5';
+            return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5';
         case 6:
-            return 'grid-cols-2 sm:grid-cols-4 md:grid-cols-6';
+            return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6';
         case 7:
-            return 'grid-cols-2 sm:grid-cols-4 md:grid-cols-7';
+            return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7';
         default:
-            return null;
+            return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-4';
     }
 }

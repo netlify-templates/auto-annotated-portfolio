@@ -35,8 +35,8 @@ export const FeaturedItemModel: Model = {
         {
             type: 'model',
             name: 'featuredImage',
-            label: 'Image',
-            models: ['ImageBlock'],
+            label: 'Media',
+            models: ['ImageBlock', 'VideoBlock'],
             default: {
                 type: 'ImageBlock',
                 url: 'https://assets.stackbit.com/components/images/default/default-image.png',

@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import dayjs from 'dayjs';
 import Markdown from 'markdown-to-jsx';
 import * as React from 'react';
 
@@ -29,20 +28,13 @@ const Component: React.FC<ComponentProps> = (props) => {
         nextProject,
         bottomSections = []
     } = props;
-    const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
-    const formattedDate = dayjs(date).format('YYYY-MM-DD');
 
     return (
         <BaseLayout {...props}>
             <article className="px-4 py-14 lg:py-20">
                 <header className="max-w-5xl mx-auto mb-10 sm:mb-14">
                     {client && <div className="text-lg uppercase md:mb-6">{client}</div>}
-                    <div className="flex flex-col gap-6 md:flex-row md:justify-between">
-                        <time className="text-lg md:order-last" dateTime={dateTimeAttr}>
-                            {formattedDate}
-                        </time>
-                        <h1 className="text-5xl sm:text-6xl md:max-w-2xl md:grow">{title}</h1>
-                    </div>
+                    <h1 className="text-5xl sm:text-6xl md:max-w-2xl">{title}</h1>
                 </header>
                 {description && (
                     <div className="max-w-3xl mx-auto mb-10 text-lg uppercase sm:text-xl sm:mb-14">{description}</div>

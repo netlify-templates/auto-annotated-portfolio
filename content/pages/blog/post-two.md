@@ -1,6 +1,7 @@
 ---
 type: PostLayout
 title: The Great Unbundling
+slug: post-two
 colors: colors-a
 backgroundImage:
   type: BackgroundImage

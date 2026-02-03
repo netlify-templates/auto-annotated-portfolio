@@ -5,7 +5,7 @@
         "type": "Header",
         "headerVariant": "variant-c",
         "isSticky": false,
-        "title": "Personal",
+        "title": "HELLO",
         "isTitleVisible": true,
         "primaryLinks": [
             {
@@ -17,11 +17,6 @@
                 "type": "Link",
                 "label": "Projects",
                 "url": "/projects"
-            },
-            {
-                "type": "Link",
-                "label": "Blog",
-                "url": "/blog"
             }
         ],
         "socialLinks": [
@@ -30,7 +25,7 @@
                 "altText": "Twitter",
                 "label": "Twitter",
                 "url": "https://twitter.com/netlify",
-                "icon": "twitter"
+                "icon": "tumblr"
             },
             {
                 "type": "Social",
@@ -84,7 +79,7 @@
             "address": "312 Lovely Street, Brooklyn, NY, 123456",
             "addressAltText": "My address"
         },
-        "copyrightText": "Powered by [Netlify](https://www.netlify.com/)",
+        "copyrightText": "",
         "styles": {
             "self": {
                 "width": "narrow",
