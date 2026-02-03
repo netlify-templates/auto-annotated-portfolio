@@ -1,17 +1,68 @@
-# Netlify Developer Portfolio Starter (auto-annotated)
+# Enhanced Portfolio Site
 
 ![Developer Portfolio](https://assets.stackbit.com/docs/personal-nextjs-starter-thumb.png)
 
-This is a full-fledged portfolio website built with Next.js, Tailwind CSS, [visual editor](https://docs.netlify.com/visual-editor/overview/) and the [Git Content Source](https://docs.netlify.com/create/content-sources/git/).
+This is an **enhanced version** of the [Netlify Developer Portfolio Starter](https://github.com/netlify-templates/auto-annotated-portfolio), built with Next.js, Tailwind CSS, and [Stackbit Visual Editor](https://docs.netlify.com/visual-editor/overview/).
 
-The codebase showcases **how to apply annotations at scale**, meaning: how to make much of your components [highlightable in the visual editor](https://docs.netlify.com/visual-editor/visual-editing/inline-editor/) through data attributes without manually adding code throughout the codebase.
+## 🎯 What Makes This Different
 
-**This is achieved by:**
+This fork includes significant enhancements beyond the original template:
 
-1. Adding an annotation property to the content objects at they're loaded (see `src/utils/content.ts`)
-1. When rendering the page, each content sub-object is dynamically matched to the appropriate component. At this point, wrap each component with an annotation, based on the abovementioned content property. See `src/components/components-registry.tsx`.
+### 🎥 Advanced Video Support
+- **Custom Cover Thumbnails**: Add custom thumbnail images for YouTube, Vimeo, and self-hosted videos
+- **Click-to-Play Interface**: Professional play button overlay with hover effects
+- **Gallery Integration**: Videos work seamlessly in media galleries alongside images
+- **Auto-Featured Images**: Video cover images automatically become project featured images when no image is set
 
-**⚡ Demo:** [auto-annotated-portfolio.netlify.app](https://auto-annotated-portfolio.netlify.app)
+### 🖼️ Enhanced Image Features
+- **Overlay Text**: Add customizable text directly on images with full control over:
+  - Position (top, center, bottom)
+  - Size (small, medium, large, extra large)
+  - Weight (normal, medium, bold)
+  - Alignment (left, center, right)
+  - Colors (text and background with transparency support)
+- **Clickable Images**: Turn any image into a link with optional "open in new tab" setting
+- **Standardized Dimensions**: Consistent aspect ratios across all media types (1:1, 2:3, 3:2, 3:4, 4:3, 16:9)
+
+### 📧 Netlify Forms Integration
+- Fully functional contact forms with **email notifications**
+- Built-in spam protection with honeypot fields
+- Success/error states and loading indicators
+- 100 free submissions per month on Netlify's free plan
+
+### 🎨 Improved Gallery & Layout
+- **Flexible Column Layouts**: 1-7 columns (original supported 2-7)
+- Enhanced responsive behavior across all screen sizes
+- Fixed hover effects and proper aspect ratio enforcement
+- Support for both images and videos in galleries
+
+### 📅 Cleaner UI
+- Removed date displays from frontend for a cleaner look
+- Dates still editable in Stackbit admin for organization
+- Hidden Netlify branding badge
+
+### 🛠️ Technical Improvements
+- Extended VideoBlock aspect ratio support
+- Improved overlay positioning and rendering
+- Better component organization and reusability
+- Enhanced form handling with proper state management
+
+---
+
+## 📚 Original Features
+
+This project inherits all features from the original Netlify template:
+
+- **Auto-annotation system** for visual editing
+- Git-based content management
+- Stackbit Visual Editor integration
+- Fully customizable through the visual editor
+
+**How auto-annotation works:**
+1. Annotation properties are added to content objects as they're loaded (see `src/utils/content.ts`)
+2. Components are dynamically matched and wrapped with annotations (see `src/components/components-registry.tsx`)
+
+**Original Template:** [netlify-templates/auto-annotated-portfolio](https://github.com/netlify-templates/auto-annotated-portfolio)
 
 ## Deploying to Netlify
 
