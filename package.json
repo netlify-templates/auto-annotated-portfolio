@@ -27,7 +27,7 @@
         "@types/react-syntax-highlighter": "^15.5.13",
         "eslint": "^9.21.0",
         "eslint-config-next": "^15.2.0",
-        "js-yaml": "^4.1.0",
+        "js-yaml": "^5.0.0",
         "postcss": "^8.5.3",
         "prettier": "^3.5.2",
         "typescript": "^5.8.2"
